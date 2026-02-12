@@ -1,0 +1,37 @@
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Node modules (if you add any JS tools later)
+node_modules/
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# Helper/Generator files (not needed in production)
+create-favicon.html
+generate-circular-favicon.html
+create_circular_favicon.py
+README.md
