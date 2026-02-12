@@ -24,16 +24,33 @@
   
   <title>Rislan Mohamed · Associate Software Engineer & AI/ML Specialist</title>
   
+  <!-- Critical CSS for faster initial render -->
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background-color:#03050a;font-family:system-ui,-apple-system,sans-serif;color:#eaecf0;line-height:1.6;overflow-x:hidden}
+    .content-wrapper{position:relative;z-index:5;max-width:1440px;margin:0 auto;padding:2rem 2.5rem}
+    #particle-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:0.7}
+    .reveal{opacity:0}
+    .reveal.visible{opacity:1}
+    /* Simple loading indicator */
+    .page-loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#03050a;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s}
+    .page-loader.hidden{opacity:0;pointer-events:none}
+    .loader-spinner{width:50px;height:50px;border:3px solid rgba(0,255,255,0.2);border-top-color:#0ef;border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  </style>
+  
   <!-- Favicon - Circular -->
   <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="shortcut icon" type="image/png" href="assets/apple-touch-icon.png">
   
-  <!-- Google Fonts + Font Awesome 6 -->
+  <!-- Google Fonts + Font Awesome 6 - Optimized Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
   
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -65,6 +82,11 @@
   </script>
 </head>
 <body>
+  <!-- Loading Indicator -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-spinner"></div>
+  </div>
+  
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <div class="content-wrapper">
 
@@ -111,7 +133,7 @@
         <!-- RIGHT: PROFILE PHOTO + DYNAMIC ROLE BADGE -->
         <div style="display: flex; flex-direction: column; align-items: center; gap: 1.2rem;">
           <div class="profile-ring" role="img" aria-label="Profile photo of Rislan Mohamed">
-            <img src="assets/profile-photo.png" alt="Rislan Mohamed" class="profile-photo">
+            <img src="assets/profile-photo.png" alt="Rislan Mohamed" class="profile-photo" loading="eager" fetchpriority="high">
           </div>
           <span class="accuracy-badge" style="margin-top: 0.2rem;">
             <i class="fas fa-microchip" aria-hidden="true"></i> 
@@ -325,6 +347,19 @@
     </footer>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+  
+  <!-- Hide loader when page is ready -->
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('pageLoader');
+      if (loader) {
+        setTimeout(function() {
+          loader.classList.add('hidden');
+          setTimeout(function() { loader.remove(); }, 300);
+        }, 200);
+      }
+    });
+  </script>
 </body>
 </html>

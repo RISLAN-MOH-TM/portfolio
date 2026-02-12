@@ -67,8 +67,12 @@
   // Detect mobile devices
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
   
-  if (prefersReducedMotion || (isMobile && window.innerWidth < 480)) {
-    // Disable particles on small mobile screens for better performance
+  // Check for slow connection (2G, slow-2g, or save-data)
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g' || connection.saveData);
+  
+  if (prefersReducedMotion || isSlowConnection || (isMobile && window.innerWidth < 480)) {
+    // Disable particles on small mobile screens or slow connections for better performance
     canvas.style.display = 'none';
     return;
   }
@@ -84,8 +88,8 @@
   function createParticles() {
     particles = [];
     // Reduce particle count on mobile for better performance
-    const baseCount = isMobile ? 60 : 160;
-    const particleCount = Math.min(baseCount, Math.floor(width * height / 9000));
+    const baseCount = isMobile ? 40 : 160; // Reduced from 60 to 40 for mobile
+    const particleCount = Math.min(baseCount, Math.floor(width * height / 12000)); // Increased divisor for fewer particles
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
