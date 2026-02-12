@@ -29,7 +29,6 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background-color:#03050a;font-family:system-ui,-apple-system,sans-serif;color:#eaecf0;line-height:1.6;overflow-x:hidden}
     .content-wrapper{position:relative;z-index:5;max-width:1440px;margin:0 auto;padding:2rem 2.5rem}
-    #particle-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:0.7}
     .reveal{opacity:0}
     .reveal.visible{opacity:1}
     /* Simple loading indicator */
@@ -54,6 +53,9 @@
   
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Three.js for 3D Background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -87,7 +89,9 @@
     <div class="loader-spinner"></div>
   </div>
   
-  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <!-- 3D Background Container -->
+  <div id="canvas-container"></div>
+  
   <div class="content-wrapper">
 
     <!-- ███ HERO SECTION – PHOTO, GITHUB, WHATSAPP, FULL CONNECT ███ -->
