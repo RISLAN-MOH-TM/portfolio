@@ -142,12 +142,18 @@ revealRightElements.forEach((el) => {
   )
 })
 
-// Navigation blur on scroll
+// Navigation blur on scroll + hide-on-scroll (nav & social bar)
 const nav = document.querySelector('.nav-container')
+const socialBar = document.getElementById('socialBar')
 let lastScrollY = window.scrollY
+const SCROLL_THRESHOLD = 5 // px — prevents jitter on tiny scrolls
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+  const currentScrollY = window.scrollY
+  const scrollDelta = currentScrollY - lastScrollY
+
+  // ── Desktop: darken nav background on scroll ──
+  if (currentScrollY > 50) {
     nav.style.background = 'rgba(9, 9, 9, 0.8)'
     nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)'
   } else {
@@ -155,23 +161,25 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = 'none'
   }
 
-  // Hide/show social bar on mobile when scrolling
+  // ── Shared: hide on scroll down, show on scroll up (nav + social bar) ──
+  const atTop = currentScrollY <= 60
+  const scrollingDown = scrollDelta > SCROLL_THRESHOLD
+  const scrollingUp   = scrollDelta < -SCROLL_THRESHOLD
+
+  // Mobile nav hide/show
   if (window.innerWidth <= 768) {
-    const socialBarEl = document.getElementById('socialBar')
-    if (socialBarEl) {
-      if (window.scrollY > lastScrollY && window.scrollY > 80) {
-        // Scrolling down — hide
-        socialBarEl.style.opacity = '0'
-        socialBarEl.style.pointerEvents = 'none'
-        socialBarEl.style.transform = 'translateX(-20px)'
-      } else {
-        // Scrolling up — show
-        socialBarEl.style.opacity = '1'
-        socialBarEl.style.pointerEvents = 'auto'
-        socialBarEl.style.transform = 'translateX(0)'
-      }
-    }
+    if (atTop || scrollingUp)   nav.classList.remove('nav-hidden')
+    else if (scrollingDown)     nav.classList.add('nav-hidden')
+  } else {
+    nav.classList.remove('nav-hidden')
   }
 
-  lastScrollY = window.scrollY
+  // Social bar hide/show (desktop + any viewport where it's visible)
+  if (socialBar) {
+    if (atTop || scrollingUp)   socialBar.classList.remove('social-bar-hidden')
+    else if (scrollingDown)     socialBar.classList.add('social-bar-hidden')
+  }
+
+  lastScrollY = currentScrollY
 })
+
