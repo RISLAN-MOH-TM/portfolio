@@ -1,147 +1,177 @@
-(function() {
-  'use strict';
-  
-  /////// 🌌 3D WIREFRAME SPHERE BACKGROUND ///////
-  const container = document.getElementById('canvas-container');
-  if (container && typeof THREE !== 'undefined') {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger)
+
+// Initialize Custom Cursor
+const cursor = document.querySelector('.custom-cursor')
+const cursorFollower = document.querySelector('.custom-cursor-follower')
+
+if (cursor && cursorFollower) {
+  document.addEventListener('mousemove', (e) => {
+    // Basic cursor follows exactly
+    cursor.style.left = e.clientX + 'px'
+    cursor.style.top = e.clientY + 'px'
     
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
-    container.appendChild(renderer.domElement);
+    // Follower has a slight delay/smoothness
+    gsap.to(cursorFollower, {
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.1,
+      ease: "power2.out"
+    })
+  })
+
+  // Add hover state for elements with data-cursor="hover"
+  const hoverElements = document.querySelectorAll('[data-cursor="hover"]')
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      document.body.classList.add('cursor-hover')
+    })
+    el.addEventListener('mouseleave', () => {
+      document.body.classList.remove('cursor-hover')
+    })
+  })
+}
+
+// Magnetic Buttons
+const magneticElements = document.querySelectorAll('.magnetic')
+
+magneticElements.forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const position = el.getBoundingClientRect()
+    const x = e.clientX - position.left - position.width / 2
+    const y = e.clientY - position.top - position.height / 2
     
-    // Create wireframe sphere
-    const sphereGeometry = new THREE.IcosahedronGeometry(2, 1);
-    const sphereMaterial = new THREE.MeshBasicMaterial({
-      color: 0x00ffff,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.3
-    });
-    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
-    scene.add(sphere);
-    
-    // Create inner sphere
-    const innerSphereGeometry = new THREE.IcosahedronGeometry(1, 1);
-    const innerSphereMaterial = new THREE.MeshBasicMaterial({
-      color: 0xbc13fe,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.4
-    });
-    const innerSphere = new THREE.Mesh(innerSphereGeometry, innerSphereMaterial);
-    scene.add(innerSphere);
-    
-    // Create particles
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 200;
-    const posArray = new Float32Array(particlesCount * 3);
-    
-    for(let i = 0; i < particlesCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 20;
-    }
-    
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.03,
-      color: 0x00f7ff,
-      transparent: true,
-      opacity: 0.8
-    });
-    
-    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particlesMesh);
-    
-    camera.position.z = 5;
-    
-    // Animation
-    function animate() {
-      requestAnimationFrame(animate);
-      
-      sphere.rotation.x += 0.001;
-      sphere.rotation.y += 0.002;
-      
-      innerSphere.rotation.x -= 0.002;
-      innerSphere.rotation.y -= 0.001;
-      
-      particlesMesh.rotation.y += 0.0005;
-      
-      renderer.render(scene, camera);
-    }
-    
-    animate();
-    
-    // Handle resize
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    gsap.to(el, {
+      x: x * 0.3,
+      y: y * 0.3,
+      duration: 0.5,
+      ease: "power2.out"
+    })
+  })
+
+  el.addEventListener('mouseleave', () => {
+    gsap.to(el, {
+      x: 0,
+      y: 0,
+      duration: 0.5,
+      ease: "elastic.out(1, 0.3)"
+    })
+  })
+})
+
+// GSAP Animations
+
+// Hero Parallax & Reveal
+gsap.to('.hero-bg-text', {
+  yPercent: 30,
+  ease: "none",
+  scrollTrigger: {
+    trigger: '.hero',
+    start: "top top",
+    end: "bottom top",
+    scrub: true
   }
+})
+
+// Scroll Reveal Animations
+const revealUpElements = document.querySelectorAll('.gs-reveal-up')
+revealUpElements.forEach((el) => {
+  const delay = el.getAttribute('data-delay') || 0
   
-  /////// 🎯 TYPING EFFECT FOR ROLE TITLES ///////
-  const roles = [
-    'AI/ML ENGINEER',
-    'SOFTWARE ENGINEER',
-    'IT ADMINISTRATOR',
-    'FULL-STACK DEVELOPER',
-    'CYBERSECURITY SPECIALIST'
-  ];
-  
-  let currentRoleIndex = 0;
-  let currentCharIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 100;
-  
-  const roleElement = document.getElementById('typing-role');
-  
-  function typeRole() {
-    const currentRole = roles[currentRoleIndex];
-    
-    if (isDeleting) {
-      // Deleting characters
-      roleElement.textContent = currentRole.substring(0, currentCharIndex - 1);
-      currentCharIndex--;
-      typingSpeed = 50;
-      
-      if (currentCharIndex === 0) {
-        isDeleting = false;
-        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        typingSpeed = 500; // Pause before typing next role
-      }
-    } else {
-      // Typing characters
-      roleElement.textContent = currentRole.substring(0, currentCharIndex + 1);
-      currentCharIndex++;
-      typingSpeed = 100;
-      
-      if (currentCharIndex === currentRole.length) {
-        isDeleting = true;
-        typingSpeed = 2000; // Pause at end before deleting
+  gsap.fromTo(el, 
+    { 
+      y: 100, 
+      opacity: 0 
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+      delay: delay,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%", // Trigger when top of element hits 85% of viewport height
+        toggleActions: "play none none reverse"
       }
     }
-    
-    setTimeout(typeRole, typingSpeed);
-  }
+  )
+})
+
+const revealRightElements = document.querySelectorAll('.gs-reveal-right')
+revealRightElements.forEach((el) => {
+  const delay = el.getAttribute('data-delay') || 0
   
-  // Start typing effect
-  if (roleElement) {
-    setTimeout(typeRole, 1000);
-  }
-  /////// REVEAL ON SCROLL (intersection observer) ///////
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Optionally unobserve after revealing for better performance
-        observer.unobserve(entry.target);
+  gsap.fromTo(el, 
+    { 
+      x: 100, 
+      opacity: 0 
+    },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power3.out",
+      delay: delay,
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
       }
-    });
-  }, { threshold: 0.15, rootMargin: '20px' });
-  
-  reveals.forEach(el => observer.observe(el));
-})();
+    }
+  )
+})
+
+// Navigation blur on scroll
+const nav = document.querySelector('.nav-container')
+let lastScrollY = window.scrollY
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(9, 9, 9, 0.8)'
+    nav.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)'
+  } else {
+    nav.style.background = 'rgba(9, 9, 9, 0.6)'
+    nav.style.boxShadow = 'none'
+  }
+
+  // Hide/show social bar on mobile when scrolling
+  if (window.innerWidth <= 768) {
+    const socialBarEl = document.getElementById('socialBar')
+    if (socialBarEl) {
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        // Scrolling down — hide
+        socialBarEl.style.opacity = '0'
+        socialBarEl.style.pointerEvents = 'none'
+        socialBarEl.style.transform = 'translateX(-20px)'
+      } else {
+        // Scrolling up — show
+        socialBarEl.style.opacity = '1'
+        socialBarEl.style.pointerEvents = 'auto'
+        socialBarEl.style.transform = 'translateX(0)'
+      }
+    }
+  }
+
+  lastScrollY = window.scrollY
+})

@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#03050a">
+  <title>Rislan Mohamed | Portfolio</title>
+
+  <meta name="description"
+    content="Associate Software Engineer specializing in AI/ML, full-stack development, and cybersecurity.">
+  <meta name="keywords"
+    content="Rislan Mohamed, Software Engineer, AI Engineer, Machine Learning, Python, TensorFlow, Java, Spring Boot, IoT, ESP32, Figma, UI/UX, Kali Linux, Cybersecurity, Data Science, Goldsmiths, Sri Lanka">
+  <meta name="author" content="Rislan Mohamed">
+  <meta name="theme-color" content="#090909">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Rislan Mohamed - Associate Software Engineer specializing in AI/ML, full-stack development, and cybersecurity.">
-  <meta name="keywords" content="Rislan Mohamed, Software Engineer, AI Engineer, Machine Learning, Python, TensorFlow, Java, Spring Boot, IoT, ESP32, Figma, UI/UX, Kali Linux, Cybersecurity, Data Science, Goldsmiths, Sri Lanka">
-  <meta name="author" content="Rislan Mohamed">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rislan-mohamed.com/">
   <meta property="og:title" content="Rislan Mohamed · Associate Software Engineer & AI/ML Specialist">
-  <meta property="og:description" content="Associate Software Engineer with expertise in AI/ML, full-stack development, and cybersecurity.">
+  <meta property="og:description"
+    content="Associate Software Engineer with expertise in AI/ML, full-stack development, and cybersecurity.">
   <meta property="og:image" content="https://rislan-mohamed.com/og-image.jpg">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rislan Mohamed · Associate Software Engineer & AI/ML Specialist">
-  <meta name="twitter:description" content="Associate Software Engineer specializing in AI/ML, full-stack development, and cybersecurity">
-  <title>Rislan Mohamed · Associate Software Engineer & AI/ML Specialist</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#03050a;font-family:'Inter',-apple-system,sans-serif;color:rgba(255,255,255,0.92);overflow-x:hidden}
-    .page-loader{position:fixed;inset:0;background:#03050a;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s,visibility 0.5s}
-    .page-loader.hidden{opacity:0;visibility:hidden}
-    .loader-ring{width:40px;height:40px;border-radius:50%;border:2px solid rgba(99,102,241,0.1);border-top-color:#6366f1;animation:spin 0.8s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .content-wrapper{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:2rem 2rem 0}
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-  </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <meta name="twitter:description"
+    content="Associate Software Engineer specializing in AI/ML, full-stack development, and cybersecurity">
+
+  <link rel="icon" type="image/png" href="profile.png">
+  <link rel="apple-touch-icon" href="profile.png">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="assets/apple-touch-icon.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,511 +53,644 @@
   }
   </script>
 </head>
-<body>
-  <div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
-  <div id="canvas-container"></div>
-  <div class="content-wrapper">
 
-    <!-- HERO -->
-    <header class="reveal visible" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;margin-bottom:3rem;">
-      <div style="flex:1;min-width:300px;">
-        <div class="hero-role">Associate Software Engineer · AI/ML Specialist</div>
-        <h1 class="hero-name gradient-text">Rislan Mohamed</h1>
-        <p class="hero-tagline">AI engineer & full-stack developer building intelligent systems across software, security, IoT, and data science.</p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;margin-top:1.25rem;">
-          <span class="location-chip"><i class="fa-solid fa-location-dot"></i> Addalaichchenai, Eastern Province, Sri Lanka</span>
-        </div>
-        <nav class="btn-group" style="margin-top:1.25rem;" aria-label="Social links">
-          <a href="https://linkedin.com/in/rislan-mohamed" class="btn btn-primary" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-          <a href="https://github.com/RISLAN-MOH-TM" class="btn" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://wa.me/94754642013" class="btn" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-          <a href="assets/Rislan_Mohamed_CV.pdf" class="btn btn-primary" download><i class="fa-solid fa-file-arrow-down"></i> CV</a>
-        </nav>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-        <div class="profile-ring" role="img" aria-label="Rislan Mohamed">
-          <img src="assets/profile-photo.png" alt="Rislan Mohamed" class="profile-photo" loading="eager" fetchpriority="high">
-        </div>
-        <span class="badge-role"><i class="fa-solid fa-microchip"></i> <span id="typing-role">AI/ML ENGINEER</span><span class="typing-cursor"></span></span>
-      </div>
-    </header>
+<body class="cursor-none">
 
-    <!-- SUMMARY -->
-    <section class="glass-card reveal" style="margin-bottom:2.5rem;">
-      <div class="section-label">Overview</div>
-      <p class="summary-text">
-        Results-driven Associate Software Engineer with a strong foundation in full-stack development, database management, and IT infrastructure. Pursuing BSc (Hons) Computer Science in AI and Data Science at Goldsmiths, University of London, and HND in Computing (SE) at Pearson College London. Proven track record in delivering scalable software solutions across AI/ML, IoT, and enterprise systems.
-        <span class="summary-highlight">Passionate about leveraging AI and machine learning to solve real-world problems.</span>
-      </p>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <a href="#" class="nav-logo">RISLAN</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="magnetic" data-cursor="hover">About</a></li>
+      <li><a href="#skills" class="magnetic" data-cursor="hover">Skills</a></li>
+      <li><a href="#experience" class="magnetic" data-cursor="hover">Experience</a></li>
+      <li><a href="#projects" class="magnetic" data-cursor="hover">Projects</a></li>
+      <li><a href="#contact" class="magnetic" data-cursor="hover">Contact</a></li>
+    </ul>
+    <a href="assets/Rislan_Mohamed_CV.pdf" class="nav-cta magnetic" data-cursor="hover" download>Download CV</a>
+  </nav>
+
+  <!-- Social Bar -->
+  <div class="social-bar" id="socialBar">
+    <div class="social-links-bar" id="socialLinks">
+      <a href="https://linkedin.com/in/rislan-mohamed" target="_blank" data-cursor="hover"><i
+          class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/RISLAN-MOH-TM" target="_blank" data-cursor="hover"><i
+          class="fa-brands fa-github"></i></a>
+      <a href="mailto:contact@rislan.com" data-cursor="hover"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://wa.me/94754642013" target="_blank" data-cursor="hover"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-bg-text gs-reveal">RISLAN</div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <div class="hero-image-wrapper gs-reveal-up">
+          <img src="profile.png" alt="Rislan Mohamed" class="hero-image">
+        </div>
+        <div class="hero-intro gs-reveal-right">
+          <h1>Rislan Mohamed</h1>
+          <div class="hero-roles">Associate Software Engineer &bull; AI/ML Specialist</div>
+          <p>AI engineer & full-stack developer building intelligent systems across software, security, IoT, and data
+            science.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary magnetic" data-cursor="hover">View Projects</a>
+            <a href="#contact" class="btn-secondary magnetic" data-cursor="hover">Hire Me</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        Scroll
+        <div class="scroll-line"></div>
+      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section style="margin-bottom:2.5rem;">
-      <div class="section-label">Technical Edge</div>
-      <h2 class="section-title">Skills & Expertise</h2>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="container">
+      <div class="section-header gs-reveal-up">
+        <span class="section-subtitle">01 // Background</span>
+        <h2 class="section-title">Overview</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image gs-reveal-up">
+          <img src="assets/ai_tech_abstract.png" alt="AI and Data Science Concept">
+        </div>
+        <div class="about-content gs-reveal-up" data-delay="0.2">
+          <p>Results-driven Associate Software Engineer with a strong foundation in full-stack development, database
+            management, and IT infrastructure. Pursuing BSc (Hons) Computer Science in AI and Data Science at
+            Goldsmiths, University of London, and HND in Computing (SE) at Pearson College London. Proven track record
+            in delivering scalable software solutions across AI/ML, IoT, and enterprise systems.</p>
+          <p style="color: var(--text-primary); font-weight: 500;">Passionate about leveraging AI and machine learning
+            to solve real-world problems.</p>
+
+          <div style="margin-top:2rem;">
+            <span class="section-subtitle">Location</span>
+            <div class="skill-tag"><i class="fa-solid fa-location-dot"></i> Addalaichchenai, Eastern Province, Sri Lanka
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="container">
+      <div class="section-header gs-reveal-up">
+        <span class="section-subtitle">02 // Technical Edge</span>
+        <h2 class="section-title">Skills & Expertise</h2>
+      </div>
+
       <div class="skills-grid">
-        <article class="skill-category reveal reveal-delay-1">
-          <div class="skill-icon" style="color:#6366f1;"><i class="fa-solid fa-brain"></i></div>
-          <h3 class="skill-category-title">AI & Machine Learning</h3>
+        <div class="skill-card gs-reveal-up">
+          <i class="fa-solid fa-brain skill-icon"></i>
+          <h3 class="skill-title">AI & Machine Learning</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Python</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Claude AI</span><span class="skill-tag">Pandas/NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Plotly</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Deep
+              Learning</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Claude AI</span><span
+              class="skill-tag">Pandas/NumPy</span><span class="skill-tag">Matplotlib</span><span
+              class="skill-tag">Plotly</span>
           </div>
-        </article>
-        <article class="skill-category reveal reveal-delay-2">
-          <div class="skill-icon" style="color:#06b6d4;"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3 class="skill-category-title">Software Engineering</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Java 21</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">PHP</span><span class="skill-tag">REST API</span><span class="skill-tag">OOP/SOLID</span><span class="skill-tag">MVC</span><span class="skill-tag">Design Patterns</span><span class="skill-tag">DSA</span><span class="skill-tag">Maven/JUnit</span>
-          </div>
-        </article>
-        <article class="skill-category reveal reveal-delay-3">
-          <div class="skill-icon" style="color:#d946ef;"><i class="fa-solid fa-microchip"></i></div>
-          <h3 class="skill-category-title">IoT & Embedded Systems</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">ESP32</span><span class="skill-tag">Arduino IDE</span><span class="skill-tag">RFID RC522</span><span class="skill-tag">IR Sensors</span><span class="skill-tag">LDR Sensor</span><span class="skill-tag">Wi-Fi Comm</span>
-          </div>
-        </article>
-        <article class="skill-category reveal reveal-delay-4">
-          <div class="skill-icon" style="color:#f59e0b;"><i class="fa-solid fa-pen-ruler"></i></div>
-          <h3 class="skill-category-title">UI/UX & Frontend</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Figma</span><span class="skill-tag">HTML5/CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Bootstrap</span><span class="skill-tag">Responsive Design</span><span class="skill-tag">HCD</span><span class="skill-tag">Agile</span><span class="skill-tag">Prototyping</span>
-          </div>
-        </article>
-        <article class="skill-category reveal reveal-delay-1">
-          <div class="skill-icon" style="color:#10b981;"><i class="fa-solid fa-shield-halved"></i></div>
-          <h3 class="skill-category-title">Cybersecurity & NetSec</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Kali Linux</span><span class="skill-tag">Metasploit</span><span class="skill-tag">MCP</span><span class="skill-tag">CVE RAG</span><span class="skill-tag">Penetration Testing</span><span class="skill-tag">VLANs/Subnetting</span>
-          </div>
-        </article>
-        <article class="skill-category reveal reveal-delay-2">
-          <div class="skill-icon" style="color:#8b5cf6;"><i class="fa-solid fa-database"></i></div>
-          <h3 class="skill-category-title">Database & Analytics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">MySQL</span><span class="skill-tag">phpMyAdmin</span><span class="skill-tag">SQL</span><span class="skill-tag">H2 Database</span><span class="skill-tag">Data Analytics</span><span class="skill-tag">BI Dashboards</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section style="margin-bottom:2.5rem;">
-      <div class="section-label">Career</div>
-      <h2 class="section-title">Dynamic Experience</h2>
-      <div class="grid-2">
-        <div>
-          <article class="exp-item reveal reveal-delay-1">
-            <div class="exp-company"><i class="fa-solid fa-building"></i> UNIX-NET-TECHNOLOGIES</div>
-            <h3 class="exp-title">Associate Software Engineer</h3>
-            <div class="exp-date"><i class="fa-solid fa-calendar"></i> Nov 2025 – Present</div>
-            <ul class="exp-list">
-              <li>Responsive web interfaces (HTML, CSS, Bootstrap, JS) – cross-browser</li>
-              <li>Backend PHP, secure server logic</li>
-              <li>MySQL/phpMyAdmin, query optimization</li>
-              <li>Web hosting, DNS, enterprise deployments</li>
-              <li>Testing, debugging, security best practices</li>
-            </ul>
-          </article>
-          <article class="exp-item reveal reveal-delay-2">
-            <div class="exp-company"><i class="fa-solid fa-store"></i> EuroFresh</div>
-            <h3 class="exp-title">Website Manager</h3>
-            <div class="exp-date"><i class="fa-solid fa-calendar"></i> May 2025 – Present</div>
-            <ul class="exp-list">
-              <li>E-commerce grocery management – product listings, inventory</li>
-              <li>Price/stock updates, database reliability</li>
-              <li>Real-time product info accuracy</li>
-            </ul>
-          </article>
         </div>
-        <div>
-          <article class="exp-item reveal reveal-delay-3">
-            <div class="exp-company"><i class="fa-solid fa-laptop-code"></i> Freelance</div>
-            <h3 class="exp-title">Freelance Software Engineer</h3>
-            <div class="exp-date"><i class="fa-solid fa-calendar"></i> Mar 2025 – Present</div>
-            <ul class="exp-list">
-              <li>Custom dev, database systems, networking (VLANs, subnetting)</li>
-              <li>SQL-based DB design, IT infrastructure documentation</li>
-              <li>Solutions for startups, businesses, academic projects</li>
-            </ul>
-          </article>
-          <article class="exp-item reveal reveal-delay-4">
-            <div class="exp-company"><i class="fa-solid fa-network-wired"></i> Afran Travels & Tours</div>
-            <h3 class="exp-title">IT Administrator & Analyzer</h3>
-            <div class="exp-date"><i class="fa-solid fa-calendar"></i> 2023 – 2025</div>
-            <ul class="exp-list">
-              <li>99% uptime, IT infrastructure, hardware/software config</li>
-              <li>Network monitoring, cyber threat mitigation</li>
-              <li>User permissions, backups, recovery procedures</li>
-            </ul>
-          </article>
+
+        <div class="skill-card gs-reveal-up" data-delay="0.1">
+          <i class="fa-solid fa-laptop-code skill-icon"></i>
+          <h3 class="skill-title">Software Engineering</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Java 21</span><span class="skill-tag">Spring Boot</span><span
+              class="skill-tag">PHP</span><span class="skill-tag">REST API</span><span
+              class="skill-tag">OOP/SOLID</span><span class="skill-tag">MVC</span><span class="skill-tag">Design
+              Patterns</span><span class="skill-tag">DSA</span><span class="skill-tag">Maven/JUnit</span>
+          </div>
+        </div>
+
+        <div class="skill-card gs-reveal-up" data-delay="0.2">
+          <i class="fa-solid fa-microchip skill-icon"></i>
+          <h3 class="skill-title">IoT & Embedded Systems</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">ESP32</span><span class="skill-tag">Arduino IDE</span><span class="skill-tag">RFID
+              RC522</span><span class="skill-tag">IR Sensors</span><span class="skill-tag">LDR Sensor</span><span
+              class="skill-tag">Wi-Fi Comm</span>
+          </div>
+        </div>
+
+        <div class="skill-card gs-reveal-up">
+          <i class="fa-solid fa-pen-ruler skill-icon"></i>
+          <h3 class="skill-title">UI/UX & Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span><span class="skill-tag">HTML5/CSS3</span><span
+              class="skill-tag">JavaScript</span><span class="skill-tag">Bootstrap</span><span
+              class="skill-tag">Responsive Design</span><span class="skill-tag">HCD</span><span
+              class="skill-tag">Agile</span><span class="skill-tag">Prototyping</span>
+          </div>
+        </div>
+
+        <div class="skill-card gs-reveal-up" data-delay="0.1">
+          <i class="fa-solid fa-shield-halved skill-icon"></i>
+          <h3 class="skill-title">Cybersecurity & NetSec</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Kali Linux</span><span class="skill-tag">Metasploit</span><span
+              class="skill-tag">MCP</span><span class="skill-tag">CVE RAG</span><span class="skill-tag">Penetration
+              Testing</span><span class="skill-tag">VLANs/Subnetting</span>
+          </div>
+        </div>
+
+        <div class="skill-card gs-reveal-up" data-delay="0.2">
+          <i class="fa-solid fa-database skill-icon"></i>
+          <h3 class="skill-title">Database & Analytics</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span><span class="skill-tag">phpMyAdmin</span><span
+              class="skill-tag">SQL</span><span class="skill-tag">H2 Database</span><span class="skill-tag">Data
+              Analytics</span><span class="skill-tag">BI Dashboards</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION + AI PROJECT -->
-    <section style="margin-bottom:2.5rem;">
-      <div class="grid-2">
-        <article class="glass-card reveal reveal-delay-1">
-          <div class="section-label">Education</div>
-          <div style="display:flex;flex-direction:column;gap:1.25rem;">
-            <div>
-              <h2 class="section-title-sm" style="margin-bottom:0.3rem;">BSc (Hons) Computer Science in AI and Data Science <span style="font-weight:400;font-size:0.8rem;color:var(--text-tertiary);letter-spacing:0.05em;">(Reading)</span></h2>
-              <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:0.4rem;">
-                <i class="fa-solid fa-university" style="color:var(--accent-1);margin-right:0.4rem;"></i> Goldsmiths, University of London
-              </div>
-              <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
-                <span class="skill-tag" style="font-size:0.75rem;">Artificial Intelligence</span>
-                <span class="skill-tag" style="font-size:0.75rem;">Data Science</span>
-                <span class="skill-tag" style="font-size:0.75rem;">Machine Learning</span>
-                <span class="skill-tag" style="font-size:0.75rem;">Computer Vison Engineer</span>
-                <span class="skill-tag" style="font-size:0.75rem;">Deep Learning</span>
-              </div>
-            </div>
-            <div style="border-top:1px solid var(--glass-border);padding-top:1rem;">
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.3rem;">
-                <i class="fa-solid fa-graduation-cap" style="color:var(--accent-3);"></i>
-                <h2 class="section-title-sm" style="margin-bottom:0;font-size:1.1rem;">Higher National Diploma (HND) in Computing — SE</h2>
-              </div>
-              <div style="font-size:0.85rem;color:var(--text-secondary);">Pearson College London | BCAS Campus · 2024–2026</div>
-              <p class="summary-text" style="font-size:0.88rem;margin-top:0.3rem;">Active member of <span class="summary-highlight">BITS (BCAS IT Society)</span> & Batch Representative.</p>
-            </div>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="container">
+      <div class="section-header gs-reveal-up">
+        <span class="section-subtitle">03 // Career</span>
+        <h2 class="section-title">Dynamic Experience</h2>
+      </div>
+
+      <div class="experience-list">
+        <div class="experience-card gs-reveal-up">
+          <div class="timeline-date">Nov 2025 – Present</div>
+          <h3 class="skill-title" style="margin-bottom: 0.5rem;">Associate Software Engineer</h3>
+          <div style="color: var(--accent-glow); margin-bottom: 1rem;"><i class="fa-solid fa-building"></i>
+            UNIX-NET-TECHNOLOGIES</div>
+          <ul class="project-features-list">
+            <li>Responsive web interfaces (HTML, CSS, Bootstrap, JS) – cross-browser</li>
+            <li>Backend PHP, secure server logic</li>
+            <li>MySQL/phpMyAdmin, query optimization</li>
+            <li>Web hosting, DNS, enterprise deployments</li>
+            <li>Testing, debugging, security best practices</li>
+          </ul>
+        </div>
+
+        <div class="experience-card gs-reveal-up" data-delay="0.1">
+          <div class="timeline-date">May 2025 – Present</div>
+          <h3 class="skill-title" style="margin-bottom: 0.5rem;">Website Manager</h3>
+          <div style="color: var(--accent-glow); margin-bottom: 1rem;"><i class="fa-solid fa-store"></i> EuroFresh</div>
+          <ul class="project-features-list">
+            <li>E-commerce grocery management – product listings, inventory</li>
+            <li>Price/stock updates, database reliability</li>
+            <li>Real-time product info accuracy</li>
+          </ul>
+        </div>
+
+        <div class="experience-card gs-reveal-up" data-delay="0.2">
+          <div class="timeline-date">Mar 2025 – Present</div>
+          <h3 class="skill-title" style="margin-bottom: 0.5rem;">Freelance Software Engineer</h3>
+          <div style="color: var(--accent-glow); margin-bottom: 1rem;"><i class="fa-solid fa-laptop-code"></i> Freelance
           </div>
-        </article>
-        <article class="glass-card reveal reveal-delay-2" style="position:relative;overflow:hidden;">
-          <div class="section-label">Key Project</div>
-          <h2 class="section-title-sm">AI Fabric Identifier</h2>
-          <div style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">BCAS Campus · Apr 2025 – Jul 2025</div>
-          <span class="accuracy-badge"><i class="fa-solid fa-microchip"></i> 95.7% Accuracy</span>
-          <ul class="exp-list" style="margin-top:0.75rem;">
+          <ul class="project-features-list">
+            <li>Custom dev, database systems, networking (VLANs, subnetting)</li>
+            <li>SQL-based DB design, IT infrastructure documentation</li>
+            <li>Solutions for startups, businesses, academic projects</li>
+          </ul>
+        </div>
+
+        <div class="experience-card gs-reveal-up" data-delay="0.3">
+          <div class="timeline-date">2023 – 2025</div>
+          <h3 class="skill-title" style="margin-bottom: 0.5rem;">IT Administrator & Analyzer</h3>
+          <div style="color: var(--accent-glow); margin-bottom: 1rem;"><i class="fa-solid fa-network-wired"></i> Afran
+            Travels & Tours</div>
+          <ul class="project-features-list">
+            <li>99% uptime, IT infrastructure, hardware/software config</li>
+            <li>Network monitoring, cyber threat mitigation</li>
+            <li>User permissions, backups, recovery procedures</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & AI PROJECT -->
+    <section id="education" class="container">
+      <div class="section-header gs-reveal-up">
+        <span class="section-subtitle">04 // Academics</span>
+        <h2 class="section-title">Education & Key Project</h2>
+      </div>
+
+      <div class="education-grid">
+        <div class="edu-card gs-reveal-up">
+          <h3 class="skill-title">BSc (Hons) Computer Science in AI and Data Science <span
+              style="font-size:1rem;font-weight:400;color:var(--text-tertiary);">(Reading)</span></h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><i class="fa-solid fa-university"
+              style="color:var(--accent-glow);"></i> Goldsmiths, University of London</p>
+          <div class="skill-tags" style="margin-bottom: 2rem;">
+            <span class="skill-tag">Artificial Intelligence</span>
+            <span class="skill-tag">Data Science</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">Deep Learning</span>
+          </div>
+
+          <hr style="border: 0; height: 1px; background: var(--border-color); margin: 2rem 0;">
+
+          <h3 class="skill-title">Higher National Diploma (HND) in Computing — SE</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;"><i class="fa-solid fa-graduation-cap"
+              style="color:var(--accent-glow);"></i> Pearson College London | BCAS Campus · 2024–2026</p>
+          <p>Active member of <strong style="color: var(--text-primary);">BITS (BCAS IT Society)</strong> & Batch
+            Representative.</p>
+        </div>
+
+        <div class="edu-card gs-reveal-up" data-delay="0.2">
+          <div class="project-badge">Key Project</div>
+          <h3 class="skill-title">AI Fabric Identifier</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1rem;">BCAS Campus · Apr 2025 – Jul 2025</p>
+          <div class="accuracy-badge"><i class="fa-solid fa-microchip"></i> 95.7% Accuracy</div>
+          <ul class="project-features-list" style="margin-top: 1.5rem;">
             <li>TensorFlow deep learning – cotton % estimation</li>
             <li>Streamlit web app with real-time verification</li>
             <li>Confidence visualization, watermarked reports</li>
           </ul>
-        </article>
+        </div>
       </div>
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section style="margin-bottom:2.5rem;">
-      <div class="section-label">Credentials</div>
-      <h2 class="section-title">Certifications</h2>
-      <div class="cert-grid">
-        <article class="cert-badge reveal reveal-delay-1">
-          <div class="cert-icon" style="color:#06b6d4;"><i class="fa-solid fa-chart-line"></i></div>
-          <h3 class="cert-title">UniAthena</h3>
-          <p class="cert-desc">Diploma in Data Visualization Using Python <strong>(Score 89%)</strong></p>
-        </article>
-        <article class="cert-badge reveal reveal-delay-2">
-          <div class="cert-icon" style="color:#d946ef;"><i class="fa-solid fa-robot"></i></div>
-          <h3 class="cert-title">Anthropic</h3>
-          <p class="cert-desc">Claude Code in Action (Feb 2026) · <span style="font-size:0.7rem;color:var(--text-tertiary);">ID: 45g2nmewtct9</span></p>
-        </article>
-        <article class="cert-badge reveal reveal-delay-3">
-          <div class="cert-icon" style="color:#10b981;"><i class="fa-solid fa-shield"></i></div>
-          <h3 class="cert-title">ADBI E-Learning</h3>
-          <p class="cert-desc">Cybersecurity – comprehensive principles & data security tools</p>
-        </article>
-        <article class="cert-badge reveal reveal-delay-4">
-          <div class="cert-icon" style="color:#8b5cf6;"><i class="fa-solid fa-graduation-cap"></i></div>
-          <h3 class="cert-title">Simplilearn</h3>
-          <p class="cert-desc">Intro to AI · Cyber Security 101 · Digital Security · UI/UX · Cloud/ML</p>
-        </article>
+    <section id="certifications" class="container">
+      <div class="section-header gs-reveal-up">
+        <span class="section-subtitle">05 // Credentials</span>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card gs-reveal-up">
+          <i class="fa-solid fa-chart-line skill-icon"></i>
+          <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">UniAthena</h3>
+          <p style="color: var(--text-secondary);">Diploma in Data Visualization Using Python <strong>(Score
+              89%)</strong></p>
+        </div>
+        <div class="skill-card gs-reveal-up" data-delay="0.1">
+          <i class="fa-solid fa-robot skill-icon"></i>
+          <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Anthropic</h3>
+          <p style="color: var(--text-secondary);">Claude Code in Action (Feb 2026) <br> <span
+              style="font-size: 0.8rem; color: var(--text-tertiary);">ID: 45g2nmewtct9</span></p>
+        </div>
+        <div class="skill-card gs-reveal-up" data-delay="0.2">
+          <i class="fa-solid fa-shield skill-icon"></i>
+          <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">ADBI E-Learning</h3>
+          <p style="color: var(--text-secondary);">Cybersecurity – comprehensive principles & data security tools</p>
+        </div>
+        <div class="skill-card gs-reveal-up" data-delay="0.3">
+          <i class="fa-solid fa-graduation-cap skill-icon"></i>
+          <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Simplilearn</h3>
+          <p style="color: var(--text-secondary);">Intro to AI · Cyber Security 101 · Digital Security · UI/UX ·
+            Cloud/ML</p>
+        </div>
       </div>
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section style="margin-bottom:2.5rem;">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title">Projects</h2>
+    <section id="projects" class="container">
+      <div class="section-header gs-reveal-up">
+        <span class="section-subtitle">06 // Portfolio</span>
+        <h2 class="section-title">Selected Projects</h2>
+      </div>
 
-      <!-- PROJECT 1 -->
-      <article class="project-card reveal">
-        <div class="project-badge"><i class="fa-solid fa-flask"></i> Research Project</div>
-        <h3 class="project-title">AI-Powered Automated Penetration Testing System</h3>
-        <div class="project-tech">
-          <span class="project-tech-tag">Python</span>
-          <span class="project-tech-tag">Claude AI</span>
-          <span class="project-tech-tag">Kali Linux</span>
-          <span class="project-tech-tag">MCP</span>
-          <span class="project-tech-tag">DeepSeek</span>
-          <span class="project-tech-tag">CVE RAG</span>
-        </div>
-        <div class="project-grid">
-          <div>
-            <div class="project-section-label">Features</div>
-            <ul class="project-features">
-              <li>Automated vulnerability scanning</li>
-              <li>CVE enrichment engine</li>
-              <li>Severity prediction</li>
-              <li>Remediation recommendations</li>
-              <li>AI-assisted reporting</li>
-            </ul>
+      <div class="projects-grid">
+        <!-- PROJECT 1 -->
+        <div class="project-card-full gs-reveal-up">
+          <div class="project-badge"><i class="fa-solid fa-flask"></i> Research Project</div>
+          <h3 class="project-title-large">AI-Powered Automated Penetration Testing System</h3>
+          <div class="skill-tags" style="margin-bottom: 2rem;">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Claude AI</span>
+            <span class="skill-tag">Kali Linux</span>
+            <span class="skill-tag">MCP</span>
+            <span class="skill-tag">DeepSeek</span>
+            <span class="skill-tag">CVE RAG</span>
           </div>
-          <div>
-            <div class="project-section-label">Impact</div>
-            <div class="project-impact">Improved vulnerability analysis efficiency through automated CVE enrichment and AI-driven severity prediction.</div>
-          </div>
-        </div>
-        <div class="project-buttons">
-          <a href="#" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-          <a href="#" class="btn"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-      </article>
 
-      <!-- PROJECT 2 -->
-      <article class="project-card reveal">
-        <div class="project-badge"><i class="fa-solid fa-traffic-light"></i> IoT Smart City Project</div>
-        <h3 class="project-title">Smart Traffic Management System with Emergency Vehicle Priority</h3>
-        <div class="project-tech">
-          <span class="project-tech-tag">ESP32</span>
-          <span class="project-tech-tag">RFID RC522</span>
-          <span class="project-tech-tag">IR Sensors</span>
-          <span class="project-tech-tag">LDR Sensor</span>
-          <span class="project-tech-tag">Arduino IDE</span>
-          <span class="project-tech-tag">JavaScript</span>
-          <span class="project-tech-tag">Wi-Fi</span>
-          <span class="project-tech-tag">IoT</span>
-        </div>
-        <div class="project-grid">
-          <div>
-            <div class="project-section-label">Features</div>
-            <ul class="project-features">
-              <li>Real-time traffic density monitoring using IR sensors</li>
-              <li>Emergency vehicle detection using RFID technology</li>
-              <li>Automatic traffic signal control based on traffic conditions</li>
-              <li>Ambulance priority signal management</li>
-              <li>Vehicle counting and traffic analytics</li>
-              <li>Automatic street light control using LDR sensor</li>
-              <li>Live web dashboard monitoring</li>
-              <li>Emergency alert notifications</li>
-              <li>Manual traffic signal control through dashboard</li>
-              <li>Peak traffic hour analysis and reporting</li>
-              <li>Real-time traffic light status visualization</li>
-              <li>Two-node ESP32 distributed architecture</li>
-            </ul>
-          </div>
-          <div>
-            <div class="project-section-label">Impact</div>
-            <div class="project-impact">Reduces traffic congestion at intersections. Improves ambulance response time. Reduces energy consumption through smart street lighting. Demonstrates practical Smart City and IoT implementation.</div>
-            <div class="project-section-label" style="margin-top:1rem;">Status</div>
-            <div class="project-status-grid">
-              <span class="status-item checked">Hardware Prototype Completed</span>
-              <span class="status-item checked">Website Dashboard Developed</span>
-              <span class="status-item checked">Emergency Vehicle Priority Implemented</span>
-              <span class="status-item checked">Traffic Density Detection Implemented</span>
-              <span class="status-item checked">Smart Street Lighting Implemented</span>
-              <span class="status-item checked">Vehicle Analytics Implemented</span>
-              <span class="status-item checked">Ready for Demonstration</span>
+          <div class="project-details-grid">
+            <div>
+              <h4 class="project-subtitle">Features</h4>
+              <ul class="project-features-list">
+                <li>Automated vulnerability scanning</li>
+                <li>CVE enrichment engine</li>
+                <li>Severity prediction</li>
+                <li>Remediation recommendations</li>
+                <li>AI-assisted reporting</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="project-subtitle">Impact</h4>
+              <p class="project-impact-box">Improved vulnerability analysis efficiency through automated CVE enrichment
+                and AI-driven severity prediction.</p>
             </div>
           </div>
-        </div>
-        <div class="project-buttons">
-          <a href="#" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-          <a href="#" class="btn"><i class="fa-solid fa-code"></i> Source Code</a>
-          <a href="#" class="btn"><i class="fa-solid fa-display"></i> Live Dashboard</a>
-          <a href="#" class="btn"><i class="fa-solid fa-chart-bar"></i> Analytics Report</a>
-          <a href="#" class="btn btn-ghost"><i class="fa-solid fa-images"></i> Gallery</a>
-        </div>
-        <div class="project-category" style="margin-top:0.75rem;">
-          <span class="category-tag">Internet of Things (IoT)</span>
-          <span class="category-tag">Smart Transportation</span>
-          <span class="category-tag">Smart City Solutions</span>
-          <span class="category-tag">Intelligent Traffic Management</span>
-        </div>
-      </article>
 
-      <!-- PROJECT 3 -->
-      <article class="project-card reveal">
-        <div class="project-badge"><i class="fa-solid fa-mobile-screen-button"></i> Government Digital Transformation</div>
-        <h3 class="project-title">Mobile-Based Employee Leave Management System for Divisional Secretariats in Sri Lanka</h3>
-        <div class="project-tech">
-          <span class="project-tech-tag">Figma</span>
-          <span class="project-tech-tag">UI/UX Design</span>
-          <span class="project-tech-tag">Wireframing</span>
-          <span class="project-tech-tag">Interactive Prototyping</span>
-          <span class="project-tech-tag">Usability Testing</span>
-          <span class="project-tech-tag">Mobile-First</span>
-          <span class="project-tech-tag">HCD</span>
-          <span class="project-tech-tag">Agile</span>
-        </div>
-        <div class="project-grid">
-          <div>
-            <div class="project-section-label">Features</div>
-            <ul class="project-features">
-              <li>Mobile dashboard with leave balance overview</li>
-              <li>Simple leave application with mobile-friendly form</li>
-              <li>Calendar-based leave date selection</li>
-              <li>Leave type selection using dropdown menus</li>
-              <li>Document attachment for medical leave requests</li>
-              <li>Real-time leave request submission</li>
-              <li>Leave approval and rejection workflow</li>
-              <li>Supervisor comments and decision tracking</li>
-              <li>Leave history and status tracking</li>
-              <li>Push notifications and alerts</li>
-              <li>Role-based access (Employee / Supervisor / Admin)</li>
-              <li>Secure login with PIN and biometric concept</li>
-              <li>Color-coded leave status indicators</li>
-              <li>Search and filtering functionality</li>
-              <li>Confirmation messages and error handling</li>
-              <li>Mobile-responsive interface design</li>
-            </ul>
+          <div class="project-actions" style="margin-top: 2rem;">
+            <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Case
+              Study</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-brands fa-github"></i>
+              GitHub</a>
           </div>
-          <div>
-            <div class="project-section-label">Impact</div>
-            <div class="project-impact">Reduces delays in leave approval processes. Improves accessibility for government employees. Enhances communication between employees and supervisors. Encourages digital transformation within public sector services. Reduces dependency on paper-based workflows.</div>
-            <div class="project-section-label" style="margin-top:1rem;">Status</div>
-            <div class="project-status-grid">
-              <span class="status-item checked">User Research Completed</span>
-              <span class="status-item checked">Persona & Behaviour Analysis Completed</span>
-              <span class="status-item checked">Empathy Map Developed</span>
-              <span class="status-item checked">Wireframes Designed</span>
-              <span class="status-item checked">Interactive Prototype Developed</span>
-              <span class="status-item checked">Usability Testing Completed</span>
-              <span class="status-item checked">Multiple Iterations Implemented</span>
-              <span class="status-item checked">Final UI Evaluation Completed</span>
-              <span class="status-item checked">Ready for Demonstration</span>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card-full gs-reveal-up">
+          <div class="project-badge"><i class="fa-solid fa-traffic-light"></i> IoT Smart City Project</div>
+          <h3 class="project-title-large">Smart Traffic Management System with Emergency Vehicle Priority</h3>
+          <div class="skill-tags" style="margin-bottom: 2rem;">
+            <span class="skill-tag">ESP32</span>
+            <span class="skill-tag">RFID RC522</span>
+            <span class="skill-tag">IR Sensors</span>
+            <span class="skill-tag">LDR Sensor</span>
+            <span class="skill-tag">Arduino IDE</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Wi-Fi</span>
+            <span class="skill-tag">IoT</span>
+          </div>
+
+          <div class="project-details-grid">
+            <div>
+              <h4 class="project-subtitle">Features</h4>
+              <ul class="project-features-list">
+                <li>Real-time traffic density monitoring using IR sensors</li>
+                <li>Emergency vehicle detection using RFID technology</li>
+                <li>Automatic traffic signal control based on traffic conditions</li>
+                <li>Ambulance priority signal management</li>
+                <li>Vehicle counting and traffic analytics</li>
+                <li>Automatic street light control using LDR sensor</li>
+                <li>Live web dashboard monitoring</li>
+                <li>Emergency alert notifications</li>
+                <li>Manual traffic signal control through dashboard</li>
+                <li>Peak traffic hour analysis and reporting</li>
+                <li>Real-time traffic light status visualization</li>
+                <li>Two-node ESP32 distributed architecture</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="project-subtitle">Impact</h4>
+              <p class="project-impact-box">Reduces traffic congestion at intersections. Improves ambulance response
+                time. Reduces energy consumption through smart street lighting. Demonstrates practical Smart City and
+                IoT implementation.</p>
+
+              <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
+              <div class="project-status-grid">
+                <span class="status-item checked">Hardware Prototype Completed</span>
+                <span class="status-item checked">Website Dashboard Developed</span>
+                <span class="status-item checked">Emergency Vehicle Priority Implemented</span>
+                <span class="status-item checked">Traffic Density Detection Implemented</span>
+                <span class="status-item checked">Smart Street Lighting Implemented</span>
+                <span class="status-item checked">Vehicle Analytics Implemented</span>
+                <span class="status-item checked">Ready for Demonstration</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="project-buttons">
-          <a href="#" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-          <a href="#" class="btn"><i class="fa-solid fa-pen-ruler"></i> UI Prototype</a>
-          <a href="#" class="btn"><i class="fa-solid fa-mobile-screen"></i> Interactive Design</a>
-          <a href="#" class="btn"><i class="fa-solid fa-flask"></i> Usability Testing</a>
-          <a href="#" class="btn"><i class="fa-solid fa-chart-simple"></i> Evaluation Report</a>
-          <a href="#" class="btn btn-ghost"><i class="fa-solid fa-images"></i> Design Gallery</a>
-        </div>
-        <div class="project-category" style="margin-top:0.75rem;">
-          <span class="category-tag">UI/UX Design</span>
-          <span class="category-tag">Mobile Application Design</span>
-          <span class="category-tag">Government Digital Services</span>
-          <span class="category-tag">Human-Centered Design</span>
-        </div>
-      </article>
 
-      <!-- PROJECT 4 -->
-      <article class="project-card reveal">
-        <div class="project-badge"><i class="fa-solid fa-chart-bar"></i> Large Dataset Processing & BI Platform</div>
-        <h3 class="project-title">TransitFlow Analytics System</h3>
-        <div class="project-tech">
-          <span class="project-tech-tag">Java 21</span>
-          <span class="project-tech-tag">Spring Boot</span>
-          <span class="project-tech-tag">Python</span>
-          <span class="project-tech-tag">Streamlit</span>
-          <span class="project-tech-tag">H2</span>
-          <span class="project-tech-tag">REST API</span>
-          <span class="project-tech-tag">Pandas</span>
-          <span class="project-tech-tag">Plotly</span>
-          <span class="project-tech-tag">Maven</span>
-          <span class="project-tech-tag">JUnit 5</span>
-          <span class="project-tech-tag">Selenium</span>
-          <span class="project-tech-tag">OOP</span>
-          <span class="project-tech-tag">SOLID</span>
-          <span class="project-tech-tag">MVC</span>
-          <span class="project-tech-tag">DSA</span>
-        </div>
-        <div class="project-grid">
-          <div>
-            <div class="project-section-label">Features</div>
-            <ul class="project-features">
-              <li>Large-scale CSV dataset processing (50MB+)</li>
-              <li>Memory-efficient chunk-based data ingestion</li>
-              <li>Direct local path dataset loading</li>
-              <li>Multi-source dataset integration and validation</li>
-              <li>Automatic duplicate detection and removal</li>
-              <li>Dead Letter Queue (DLQ) management for faulty records</li>
-              <li>Revenue analytics and business performance monitoring</li>
-              <li>Customer segmentation and behavioural analysis</li>
-              <li>Seasonal demand forecasting and trend analysis</li>
-              <li>Delivery performance and logistics efficiency analysis</li>
-              <li>Regional sales and operational performance dashboards</li>
-              <li>Statistical anomaly detection for business insights</li>
-              <li>Interactive visual dashboards and charts</li>
-              <li>PDF and CSV report generation</li>
-              <li>REST API integration between backend and frontend</li>
-              <li>Real-time analytics visualization</li>
-              <li>Role-based modular architecture</li>
-              <li>Automated testing and validation framework</li>
-            </ul>
+          <div class="project-actions" style="margin-top: 2rem; flex-wrap: wrap;">
+            <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Case
+              Study</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-code"></i> Source
+              Code</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-display"></i> Live
+              Dashboard</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-chart-bar"></i>
+              Analytics Report</a>
           </div>
-          <div>
-            <div class="project-section-label">Impact</div>
-            <div class="project-impact">Enables efficient processing of large e-commerce datasets. Reduces manual data cleaning effort. Improves business decision-making through analytics. Identifies operational bottlenecks. Supports enterprise-level software engineering practices with SOLID design patterns.</div>
-            <div class="project-section-label" style="margin-top:1rem;">Status</div>
-            <div class="project-status-grid">
-              <span class="status-item checked">Requirements Analysis Completed</span>
-              <span class="status-item checked">System Architecture Designed</span>
-              <span class="status-item checked">UML Modelling Completed</span>
-              <span class="status-item checked">OOP Design Implemented</span>
-              <span class="status-item checked">SOLID Principles Applied</span>
-              <span class="status-item checked">Design Patterns Integrated</span>
-              <span class="status-item checked">Large Dataset Processing Module Developed</span>
-              <span class="status-item checked">Interactive Dashboard Developed</span>
-              <span class="status-item checked">Automated Testing Implemented</span>
-              <span class="status-item checked">Performance Optimization Completed</span>
-              <span class="status-item checked">Documentation Completed</span>
-              <span class="status-item checked">Ready for Submission</span>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card-full gs-reveal-up">
+          <div class="project-badge"><i class="fa-solid fa-mobile-screen-button"></i> Government Digital Transformation
+          </div>
+          <h3 class="project-title-large">Mobile-Based Employee Leave Management System for Divisional Secretariats in
+            Sri Lanka</h3>
+          <div class="skill-tags" style="margin-bottom: 2rem;">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Wireframing</span>
+            <span class="skill-tag">Interactive Prototyping</span>
+            <span class="skill-tag">Usability Testing</span>
+            <span class="skill-tag">Mobile-First</span>
+            <span class="skill-tag">HCD</span>
+            <span class="skill-tag">Agile</span>
+          </div>
+
+          <div class="project-details-grid">
+            <div>
+              <h4 class="project-subtitle">Features</h4>
+              <ul class="project-features-list">
+                <li>Mobile dashboard with leave balance overview</li>
+                <li>Simple leave application with mobile-friendly form</li>
+                <li>Calendar-based leave date selection</li>
+                <li>Leave type selection using dropdown menus</li>
+                <li>Document attachment for medical leave requests</li>
+                <li>Real-time leave request submission</li>
+                <li>Leave approval and rejection workflow</li>
+                <li>Supervisor comments and decision tracking</li>
+                <li>Leave history and status tracking</li>
+                <li>Push notifications and alerts</li>
+                <li>Role-based access (Employee / Supervisor / Admin)</li>
+                <li>Secure login with PIN and biometric concept</li>
+                <li>Color-coded leave status indicators</li>
+                <li>Search and filtering functionality</li>
+                <li>Confirmation messages and error handling</li>
+                <li>Mobile-responsive interface design</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="project-subtitle">Impact</h4>
+              <p class="project-impact-box">Reduces delays in leave approval processes. Improves accessibility for
+                government employees. Enhances communication between employees and supervisors. Encourages digital
+                transformation within public sector services. Reduces dependency on paper-based workflows.</p>
+
+              <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
+              <div class="project-status-grid">
+                <span class="status-item checked">User Research Completed</span>
+                <span class="status-item checked">Persona & Behaviour Analysis Completed</span>
+                <span class="status-item checked">Empathy Map Developed</span>
+                <span class="status-item checked">Wireframes Designed</span>
+                <span class="status-item checked">Interactive Prototype Developed</span>
+                <span class="status-item checked">Usability Testing Completed</span>
+                <span class="status-item checked">Multiple Iterations Implemented</span>
+                <span class="status-item checked">Final UI Evaluation Completed</span>
+                <span class="status-item checked">Ready for Demonstration</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="project-buttons">
-          <a href="#" class="btn btn-primary"><i class="fa-solid fa-file-lines"></i> Design Document</a>
-          <a href="#" class="btn"><i class="fa-solid fa-diagram-project"></i> UML Diagrams</a>
-          <a href="#" class="btn"><i class="fa-brands fa-github"></i> Source Code</a>
-          <a href="#" class="btn"><i class="fa-solid fa-chart-line"></i> Analytics Dashboard</a>
-          <a href="#" class="btn"><i class="fa-solid fa-vial"></i> Test Plan</a>
-          <a href="#" class="btn"><i class="fa-solid fa-sitemap"></i> Architecture</a>
-          <a href="#" class="btn btn-ghost"><i class="fa-solid fa-file"></i> Technical Report</a>
-          <a href="#" class="btn btn-ghost"><i class="fa-solid fa-images"></i> Screenshots</a>
-        </div>
-        <div class="project-category" style="margin-top:0.75rem;">
-          <span class="category-tag">Business Intelligence</span>
-          <span class="category-tag">Data Analytics</span>
-          <span class="category-tag">Large Dataset Processing</span>
-          <span class="category-tag">Enterprise Software</span>
-          <span class="category-tag">Java Spring Boot</span>
-          <span class="category-tag">Python Streamlit</span>
-          <span class="category-tag">Data Visualization</span>
-          <span class="category-tag">Software Engineering</span>
-        </div>
-      </article>
-    </section>
 
-    <!-- SOFT SKILLS -->
-    <section style="margin-bottom:2.5rem;">
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
-        <div class="soft-skills reveal">
-          <span class="soft-skill"><i class="fa-solid fa-lightbulb"></i> Problem Solving</span>
-          <span class="soft-skill"><i class="fa-solid fa-users"></i> Teamwork</span>
-          <span class="soft-skill"><i class="fa-solid fa-clock"></i> Time Management</span>
-          <span class="soft-skill"><i class="fa-solid fa-chart-simple"></i> Analytical Thinking</span>
-          <span class="soft-skill"><i class="fa-solid fa-crown"></i> Leadership</span>
+          <div class="project-actions" style="margin-top: 2rem; flex-wrap: wrap;">
+            <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Case
+              Study</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-pen-ruler"></i> UI
+              Prototype</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-mobile-screen"></i>
+              Interactive Design</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-flask"></i> Usability
+              Testing</a>
+          </div>
         </div>
-        <div class="reveal" style="font-size:0.85rem;color:var(--text-tertiary);">
-          <i class="fa-solid fa-circle-check" style="color:var(--accent-1);"></i> Claude Code · Jupyter · VS Code · GitHub
+
+        <!-- PROJECT 4 -->
+        <div class="project-card-full gs-reveal-up">
+          <div class="project-badge"><i class="fa-solid fa-chart-bar"></i> Large Dataset Processing & BI Platform</div>
+          <h3 class="project-title-large">TransitFlow Analytics System</h3>
+          <div class="skill-tags" style="margin-bottom: 2rem;">
+            <span class="skill-tag">Java 21</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">H2</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Plotly</span>
+            <span class="skill-tag">Maven</span>
+            <span class="skill-tag">JUnit 5</span>
+            <span class="skill-tag">Selenium</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">SOLID</span>
+            <span class="skill-tag">MVC</span>
+            <span class="skill-tag">DSA</span>
+          </div>
+
+          <div class="project-details-grid">
+            <div>
+              <h4 class="project-subtitle">Features</h4>
+              <ul class="project-features-list">
+                <li>Large-scale CSV dataset processing (50MB+)</li>
+                <li>Memory-efficient chunk-based data ingestion</li>
+                <li>Direct local path dataset loading</li>
+                <li>Multi-source dataset integration and validation</li>
+                <li>Automatic duplicate detection and removal</li>
+                <li>Dead Letter Queue (DLQ) management for faulty records</li>
+                <li>Revenue analytics and business performance monitoring</li>
+                <li>Customer segmentation and behavioural analysis</li>
+                <li>Seasonal demand forecasting and trend analysis</li>
+                <li>Delivery performance and logistics efficiency analysis</li>
+                <li>Regional sales and operational performance dashboards</li>
+                <li>Statistical anomaly detection for business insights</li>
+                <li>Interactive visual dashboards and charts</li>
+                <li>PDF and CSV report generation</li>
+                <li>REST API integration between backend and frontend</li>
+                <li>Real-time analytics visualization</li>
+                <li>Role-based modular architecture</li>
+                <li>Automated testing and validation framework</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="project-subtitle">Impact</h4>
+              <p class="project-impact-box">Enables efficient processing of large e-commerce datasets. Reduces manual
+                data cleaning effort. Improves business decision-making through analytics. Identifies operational
+                bottlenecks. Supports enterprise-level software engineering practices with SOLID design patterns.</p>
+
+              <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
+              <div class="project-status-grid">
+                <span class="status-item checked">Requirements Analysis Completed</span>
+                <span class="status-item checked">System Architecture Designed</span>
+                <span class="status-item checked">UML Modelling Completed</span>
+                <span class="status-item checked">OOP Design Implemented</span>
+                <span class="status-item checked">SOLID Principles Applied</span>
+                <span class="status-item checked">Design Patterns Integrated</span>
+                <span class="status-item checked">Large Dataset Processing Module Developed</span>
+                <span class="status-item checked">Interactive Dashboard Developed</span>
+                <span class="status-item checked">Automated Testing Implemented</span>
+                <span class="status-item checked">Performance Optimization Completed</span>
+                <span class="status-item checked">Documentation Completed</span>
+                <span class="status-item checked">Ready for Submission</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-actions" style="margin-top: 2rem; flex-wrap: wrap;">
+            <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Design
+              Document</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-diagram-project"></i>
+              UML Diagrams</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-brands fa-github"></i> Source
+              Code</a>
+            <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-chart-line"></i>
+              Analytics Dashboard</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <span class="footer-text"><i class="fa-solid fa-copyright"></i> 2026 · Rislan Mohamed — AI Engineer Portfolio</span>
-      <span class="footer-badge"><i class="fa-solid fa-bolt"></i> AI/ML Edge</span>
-    </footer>
-  </div>
+    <!-- SOFT SKILLS -->
+    <section id="soft-skills" class="container" style="padding: 4rem 0;">
+      <div class="gs-reveal-up"
+        style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+        <div class="soft-skills-container">
+          <span class="soft-skill-tag"><i class="fa-solid fa-lightbulb"></i> Problem Solving</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-users"></i> Teamwork</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-clock"></i> Time Management</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-chart-simple"></i> Analytical Thinking</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-crown"></i> Leadership</span>
+        </div>
 
-  <script src="script.js" defer></script>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container">
+      <div class="contact-section">
+        <div class="contact-content gs-reveal-up">
+          <span class="section-subtitle">07 // Connect</span>
+          <h2 class="section-title" style="margin-bottom: 0;">Let's build something</h2>
+          <a href="mailto:contact@rislan.com" class="contact-email magnetic" data-cursor="hover">contact@rislan.com</a>
+          <div class="contact-socials">
+            <a href="https://linkedin.com/in/rislan-mohamed" target="_blank" data-cursor="hover"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/RISLAN-MOH-TM" target="_blank" data-cursor="hover"><i
+                class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/94754642013" target="_blank" data-cursor="hover"><i
+                class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <div class="footer-content gs-reveal-up">
+      <div class="footer-text">
+        <i class="fa-solid fa-copyright"></i> 2026 Rislan Mohamed — AI Engineer Portfolio
+      </div>
+      <div class="project-badge" style="margin-bottom: 0;">
+        <i class="fa-solid fa-bolt"></i> AI/ML Edge
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
   <script>
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       var loader = document.getElementById('pageLoader');
       if (loader) {
-        setTimeout(function() {
-          loader.classList.add('hidden');
-          setTimeout(function() { loader.remove(); }, 500);
+        setTimeout(function () {
+          loader.style.opacity = '0';
+          loader.style.visibility = 'hidden';
+          setTimeout(function () { loader.remove(); }, 500);
         }, 300);
       }
     });
   </script>
 </body>
+
 </html>
