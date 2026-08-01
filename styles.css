@@ -1027,4 +1027,9 @@ footer {
   .education-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Hide scroll indicator on mobile — it overlaps the hero buttons */
+  .scroll-indicator {
+    display: none;
+  }
 }
