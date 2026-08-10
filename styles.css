@@ -88,43 +88,7 @@ body {
   opacity: 0.04;
 }
 
-/* Custom Cursor */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  background: var(--text-primary);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 10000;
-  mix-blend-mode: difference;
-  transition: transform 0.1s ease;
-}
 
-.custom-cursor-follower {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-}
-
-.cursor-hover .custom-cursor-follower {
-  width: 60px;
-  height: 60px;
-  border-color: var(--accent-glow);
-  background: rgba(179, 38, 61, 0.1);
-  backdrop-filter: blur(2px);
-}
 
 /* Navigation */
 .nav-container {

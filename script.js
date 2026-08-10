@@ -6,78 +6,54 @@ const lenis = new Lenis({
   gestureDirection: 'vertical',
   smooth: true,
   mouseMultiplier: 1,
-  smoothTouch: false,
+  smoothTouch: true,
   touchMultiplier: 2,
   infinite: false,
 })
 
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
+// Keep GSAP ScrollTrigger in sync with Lenis
+lenis.on('scroll', ScrollTrigger.update)
 
-requestAnimationFrame(raf)
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000)
+})
+gsap.ticker.lagSmoothing(0)
+
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger)
 
-// Initialize Custom Cursor
-const cursor = document.querySelector('.custom-cursor')
-const cursorFollower = document.querySelector('.custom-cursor-follower')
+// Magnetic Buttons — desktop (mouse) only
+const isTouchDevice = window.matchMedia('(hover: none)').matches
 
-if (cursor && cursorFollower) {
-  document.addEventListener('mousemove', (e) => {
-    // Basic cursor follows exactly
-    cursor.style.left = e.clientX + 'px'
-    cursor.style.top = e.clientY + 'px'
-    
-    // Follower has a slight delay/smoothness
-    gsap.to(cursorFollower, {
-      x: e.clientX,
-      y: e.clientY,
-      duration: 0.1,
-      ease: "power2.out"
-    })
-  })
+const magneticElements = document.querySelectorAll('.magnetic')
 
-  // Add hover state for elements with data-cursor="hover"
-  const hoverElements = document.querySelectorAll('[data-cursor="hover"]')
-  hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      document.body.classList.add('cursor-hover')
+if (!isTouchDevice) {
+  magneticElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const position = el.getBoundingClientRect()
+      const x = e.clientX - position.left - position.width / 2
+      const y = e.clientY - position.top - position.height / 2
+      
+      gsap.to(el, {
+        x: x * 0.3,
+        y: y * 0.3,
+        duration: 0.5,
+        ease: "power2.out"
+      })
     })
+
     el.addEventListener('mouseleave', () => {
-      document.body.classList.remove('cursor-hover')
+      gsap.to(el, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.3)"
+      })
     })
   })
 }
 
-// Magnetic Buttons
-const magneticElements = document.querySelectorAll('.magnetic')
-
-magneticElements.forEach(el => {
-  el.addEventListener('mousemove', (e) => {
-    const position = el.getBoundingClientRect()
-    const x = e.clientX - position.left - position.width / 2
-    const y = e.clientY - position.top - position.height / 2
-    
-    gsap.to(el, {
-      x: x * 0.3,
-      y: y * 0.3,
-      duration: 0.5,
-      ease: "power2.out"
-    })
-  })
-
-  el.addEventListener('mouseleave', () => {
-    gsap.to(el, {
-      x: 0,
-      y: 0,
-      duration: 0.5,
-      ease: "elastic.out(1, 0.3)"
-    })
-  })
-})
 
 // GSAP Animations
 
