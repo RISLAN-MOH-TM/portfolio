@@ -362,6 +362,32 @@ body {
   margin-bottom: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 1.4em;
+}
+
+.role-prefix {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.role-text {
+  color: var(--accent-glow);
+  font-weight: 700;
+}
+
+.role-cursor {
+  color: var(--accent-glow);
+  font-weight: 300;
+  animation: blink-caret 0.75s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
 }
 
 .hero-intro p {
@@ -936,6 +962,27 @@ footer {
   .hero-intro {
     padding: 1.25rem;
     max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-intro h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-intro p {
+    text-align: center;
+  }
+
+  .hero-roles {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .role-prefix {
+    white-space: nowrap;
   }
 
   .hero-buttons {

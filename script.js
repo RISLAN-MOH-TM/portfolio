@@ -166,13 +166,9 @@ window.addEventListener('scroll', () => {
   const scrollingDown = scrollDelta > SCROLL_THRESHOLD
   const scrollingUp   = scrollDelta < -SCROLL_THRESHOLD
 
-  // Mobile nav hide/show
-  if (window.innerWidth <= 768) {
-    if (atTop || scrollingUp)   nav.classList.remove('nav-hidden')
-    else if (scrollingDown)     nav.classList.add('nav-hidden')
-  } else {
-    nav.classList.remove('nav-hidden')
-  }
+  // Nav hide/show — all screen sizes
+  if (atTop || scrollingUp)   nav.classList.remove('nav-hidden')
+  else if (scrollingDown)     nav.classList.add('nav-hidden')
 
   // Social bar hide/show (desktop + any viewport where it's visible)
   if (socialBar) {
@@ -183,3 +179,54 @@ window.addEventListener('scroll', () => {
   lastScrollY = currentScrollY
 })
 
+// ── Typewriter Role Switcher ──────────────────────────────────────
+;(function () {
+  const roles = [
+    'Software Engineer',
+    'AI/ML Engineer',
+    'Full-Stack Developer',
+    'Data Scientist',
+    'Data Analyst',
+    'IoT Systems Developer',
+    'Cybersecurity Enthusiast',
+    'Cloud Solutions Architect',
+    'Machine Learning Specialist',
+  ]
+
+  const el        = document.getElementById('roleText')
+  if (!el) return
+
+  let roleIndex   = 0
+  let charIndex   = 0
+  let isDeleting  = false
+  const typeSpeed = 80    // ms per character while typing
+  const delSpeed  = 45    // ms per character while deleting
+  const pauseMs   = 1800  // ms to hold the completed word
+
+  function tick () {
+    const current = roles[roleIndex]
+
+    if (!isDeleting) {
+      charIndex++
+      el.textContent = current.slice(0, charIndex)
+
+      if (charIndex === current.length) {
+        isDeleting = true
+        return setTimeout(tick, pauseMs)
+      }
+      setTimeout(tick, typeSpeed)
+    } else {
+      charIndex--
+      el.textContent = current.slice(0, charIndex)
+
+      if (charIndex === 0) {
+        isDeleting = false
+        roleIndex  = (roleIndex + 1) % roles.length
+        return setTimeout(tick, 400)
+      }
+      setTimeout(tick, delSpeed)
+    }
+  }
+
+  setTimeout(tick, 800)
+})()
