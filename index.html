@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Rislan Mohamed | Portfolio</title>
 
+  <!-- Performance: Preconnect to external CDNs so DNS + TLS are resolved before scripts load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
   <meta name="description"
     content="Associate Software Engineer specializing in AI/ML, full-stack development, and cybersecurity.">
   <meta name="keywords"
@@ -77,7 +83,22 @@
       <li><a href="#contact" class="magnetic" data-cursor="hover">Contact</a></li>
     </ul>
     <a href="assets/Rislan_Mohamed_CV.pdf" class="nav-cta magnetic" data-cursor="hover" download>Download CV</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="#about" id="mobileNavAbout">About</a></li>
+      <li><a href="#skills" id="mobileNavSkills">Skills</a></li>
+      <li><a href="#experience" id="mobileNavExperience">Experience</a></li>
+      <li><a href="#projects" id="mobileNavProjects">Projects</a></li>
+      <li><a href="#contact" id="mobileNavContact">Contact</a></li>
+    </ul>
+    <a href="assets/Rislan_Mohamed_CV.pdf" class="btn-primary" style="margin-top:2rem;" download>Download CV</a>
+  </div>
 
   <!-- Social Bar -->
   <div class="social-bar" id="socialBar">
@@ -130,7 +151,7 @@
 
       <div class="about-grid">
         <div class="about-image gs-reveal-up">
-          <img src="assets/ri.png" alt="AI and Data Science Concept">
+          <img src="assets/ri.png" alt="AI and Data Science Concept" loading="lazy">
         </div>
         <div class="about-content gs-reveal-up" data-delay="0.2">
           <p>Results-driven Associate Software Engineer with a strong foundation in full-stack development, database
@@ -670,17 +691,32 @@
     </section>
 
     <!-- SOFT SKILLS -->
-    <section id="soft-skills" class="container" style="padding: 4rem 0;">
-      <div class="gs-reveal-up"
-        style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
-        <div class="soft-skills-container">
+    <section id="soft-skills" style="padding: 4rem 0; overflow: hidden;">
+      <div class="skills-marquee-wrapper gs-reveal-up">
+        <div class="skills-marquee-track">
+          <!-- First set -->
           <span class="soft-skill-tag"><i class="fa-solid fa-lightbulb"></i> Problem Solving</span>
           <span class="soft-skill-tag"><i class="fa-solid fa-users"></i> Teamwork</span>
           <span class="soft-skill-tag"><i class="fa-solid fa-clock"></i> Time Management</span>
           <span class="soft-skill-tag"><i class="fa-solid fa-chart-simple"></i> Analytical Thinking</span>
           <span class="soft-skill-tag"><i class="fa-solid fa-crown"></i> Leadership</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-comments"></i> Communication</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-arrows-spin"></i> Adaptability</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-magnifying-glass"></i> Critical Thinking</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-handshake"></i> Collaboration</span>
+          <span class="soft-skill-tag"><i class="fa-solid fa-bolt"></i> Fast Learner</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i> Problem Solving</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-users"></i> Teamwork</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-clock"></i> Time Management</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-chart-simple"></i> Analytical Thinking</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-crown"></i> Leadership</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-comments"></i> Communication</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-arrows-spin"></i> Adaptability</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i> Critical Thinking</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-handshake"></i> Collaboration</span>
+          <span class="soft-skill-tag" aria-hidden="true"><i class="fa-solid fa-bolt"></i> Fast Learner</span>
         </div>
-
       </div>
     </section>
 
@@ -719,19 +755,21 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
   <script>
-    window.addEventListener('load', function () {
+    // Use DOMContentLoaded instead of window.load so the loader hides
+    // as soon as HTML is parsed — not after every image finishes downloading
+    document.addEventListener('DOMContentLoaded', function () {
       var loader = document.getElementById('pageLoader');
       if (loader) {
         setTimeout(function () {
           loader.style.opacity = '0';
           loader.style.visibility = 'hidden';
           setTimeout(function () { loader.remove(); }, 500);
-        }, 300);
+        }, 80);
       }
     });
   </script>

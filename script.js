@@ -1,3 +1,41 @@
+// ── Hamburger / Mobile Nav Overlay ──────────────────────────────────
+(function () {
+  const hamburger = document.getElementById('hamburger')
+  const mobileNav = document.getElementById('mobileNav')
+  if (!hamburger || !mobileNav) return
+
+  function openNav () {
+    hamburger.classList.add('is-open')
+    hamburger.setAttribute('aria-expanded', 'true')
+    mobileNav.classList.add('is-open')
+    document.body.style.overflow = 'hidden'
+  }
+
+  function closeNav () {
+    hamburger.classList.remove('is-open')
+    hamburger.setAttribute('aria-expanded', 'false')
+    mobileNav.classList.remove('is-open')
+    document.body.style.overflow = ''
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (hamburger.classList.contains('is-open')) closeNav()
+    else openNav()
+  })
+
+  // Close on any mobile nav link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeNav()
+    })
+  })
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav()
+  })
+})()
+
 // Initialize Lenis for smooth scrolling
 const lenis = new Lenis({
   duration: 1.2,
@@ -59,22 +97,22 @@ gsap.to('.hero-bg-text', {
 // Scroll Reveal Animations
 const revealUpElements = document.querySelectorAll('.gs-reveal-up')
 revealUpElements.forEach((el) => {
-  const delay = el.getAttribute('data-delay') || 0
+  const delay = parseFloat(el.getAttribute('data-delay') || 0)
 
   gsap.fromTo(el,
     {
-      y: 100,
+      y: 60,
       opacity: 0
     },
     {
       y: 0,
       opacity: 1,
-      duration: 1,
-      ease: "power3.out",
+      duration: 1.4,
+      ease: "power4.out",
       delay: delay,
       scrollTrigger: {
         trigger: el,
-        start: "top 85%", // Trigger when top of element hits 85% of viewport height
+        start: "top 90%",
         toggleActions: "play none none reverse"
       }
     }
@@ -83,22 +121,64 @@ revealUpElements.forEach((el) => {
 
 const revealRightElements = document.querySelectorAll('.gs-reveal-right')
 revealRightElements.forEach((el) => {
-  const delay = el.getAttribute('data-delay') || 0
+  const delay = parseFloat(el.getAttribute('data-delay') || 0)
 
   gsap.fromTo(el,
     {
-      x: 100,
+      x: 80,
       opacity: 0
     },
     {
       x: 0,
       opacity: 1,
-      duration: 1,
-      ease: "power3.out",
+      duration: 1.4,
+      ease: "power4.out",
       delay: delay,
       scrollTrigger: {
         trigger: el,
-        start: "top 85%",
+        start: "top 90%",
+        toggleActions: "play none none reverse"
+      }
+    }
+  )
+})
+
+// Staggered entrance for skill tags inside cards
+document.querySelectorAll('.skill-card, .edu-card, .experience-card').forEach((card) => {
+  const tags = card.querySelectorAll('.skill-tag')
+  if (!tags.length) return
+  gsap.fromTo(tags,
+    { y: 14, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.07,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 88%",
+        toggleActions: "play none none reverse"
+      }
+    }
+  )
+})
+
+// Staggered entrance for project skill tags
+document.querySelectorAll('.project-card-full').forEach((card) => {
+  const tags = card.querySelectorAll('.skill-tags .skill-tag')
+  if (!tags.length) return
+  gsap.fromTo(tags,
+    { scale: 0.85, opacity: 0 },
+    {
+      scale: 1,
+      opacity: 1,
+      duration: 0.45,
+      stagger: 0.05,
+      ease: "back.out(1.4)",
+      scrollTrigger: {
+        trigger: card,
+        start: "top 88%",
         toggleActions: "play none none reverse"
       }
     }
