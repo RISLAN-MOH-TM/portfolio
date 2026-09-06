@@ -11,49 +11,36 @@ const lenis = new Lenis({
   infinite: false,
 })
 
-// Keep GSAP ScrollTrigger in sync with Lenis
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger)
+
+// Connect Lenis to GSAP ScrollTrigger
 lenis.on('scroll', ScrollTrigger.update)
 
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000)
 })
+
 gsap.ticker.lagSmoothing(0)
 
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger)
+// Anchor links smooth scroll with Lenis
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    const href = anchor.getAttribute('href')
+    if (href && href !== '#') {
+      const target = document.querySelector(href)
+      if (target) {
+        e.preventDefault()
+        lenis.scrollTo(target)
+      }
+    }
+  })
+})
 
 // Magnetic Buttons — desktop (mouse) only
 const isTouchDevice = window.matchMedia('(hover: none)').matches
 
 const magneticElements = document.querySelectorAll('.magnetic')
-
-if (!isTouchDevice) {
-  magneticElements.forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const position = el.getBoundingClientRect()
-      const x = e.clientX - position.left - position.width / 2
-      const y = e.clientY - position.top - position.height / 2
-      
-      gsap.to(el, {
-        x: x * 0.3,
-        y: y * 0.3,
-        duration: 0.5,
-        ease: "power2.out"
-      })
-    })
-
-    el.addEventListener('mouseleave', () => {
-      gsap.to(el, {
-        x: 0,
-        y: 0,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.3)"
-      })
-    })
-  })
-}
-
 
 // GSAP Animations
 
@@ -73,11 +60,11 @@ gsap.to('.hero-bg-text', {
 const revealUpElements = document.querySelectorAll('.gs-reveal-up')
 revealUpElements.forEach((el) => {
   const delay = el.getAttribute('data-delay') || 0
-  
-  gsap.fromTo(el, 
-    { 
-      y: 100, 
-      opacity: 0 
+
+  gsap.fromTo(el,
+    {
+      y: 100,
+      opacity: 0
     },
     {
       y: 0,
@@ -97,11 +84,11 @@ revealUpElements.forEach((el) => {
 const revealRightElements = document.querySelectorAll('.gs-reveal-right')
 revealRightElements.forEach((el) => {
   const delay = el.getAttribute('data-delay') || 0
-  
-  gsap.fromTo(el, 
-    { 
-      x: 100, 
-      opacity: 0 
+
+  gsap.fromTo(el,
+    {
+      x: 100,
+      opacity: 0
     },
     {
       x: 0,
@@ -140,69 +127,108 @@ window.addEventListener('scroll', () => {
   // ── Shared: hide on scroll down, show on scroll up (nav + social bar) ──
   const atTop = currentScrollY <= 60
   const scrollingDown = scrollDelta > SCROLL_THRESHOLD
-  const scrollingUp   = scrollDelta < -SCROLL_THRESHOLD
+  const scrollingUp = scrollDelta < -SCROLL_THRESHOLD
 
   // Nav hide/show — all screen sizes
-  if (atTop || scrollingUp)   nav.classList.remove('nav-hidden')
-  else if (scrollingDown)     nav.classList.add('nav-hidden')
+  if (atTop || scrollingUp) nav.classList.remove('nav-hidden')
+  else if (scrollingDown) nav.classList.add('nav-hidden')
 
   // Social bar hide/show (desktop + any viewport where it's visible)
   if (socialBar) {
-    if (atTop || scrollingUp)   socialBar.classList.remove('social-bar-hidden')
-    else if (scrollingDown)     socialBar.classList.add('social-bar-hidden')
+    if (atTop || scrollingUp) socialBar.classList.remove('social-bar-hidden')
+    else if (scrollingDown) socialBar.classList.add('social-bar-hidden')
   }
 
   lastScrollY = currentScrollY
 })
 
-// ── Typewriter Role Switcher ──────────────────────────────────────
-;(function () {
-  const roles = [
-    'Software Engineer',
-    'AI/ML Engineer',
-    'Full-Stack Developer',
-    'Data Scientist',
-    'Data Analyst',
-    'IoT Systems Developer',
-    'Cybersecurity Enthusiast',
-    'Cloud Solutions Architect',
-    'Machine Learning Specialist',
-  ]
+  // ── Typewriter Role Switcher ──────────────────────────────────────
+  ; (function () {
+    const roles = [
+      'Software Engineer',
+      'AI/ML Engineer',
+      'Full-Stack Developer',
+      'Data Scientist',
+      'Data Analyst',
+      'IoT Systems Developer',
+      'Cybersecurity Enthusiast',
+      'Cloud Solutions Architect',
+      'Machine Learning Specialist',
+    ]
 
-  const el        = document.getElementById('roleText')
-  if (!el) return
+    const el = document.getElementById('roleText')
+    if (!el) return
 
-  let roleIndex   = 0
-  let charIndex   = 0
-  let isDeleting  = false
-  const typeSpeed = 80    // ms per character while typing
-  const delSpeed  = 45    // ms per character while deleting
-  const pauseMs   = 1800  // ms to hold the completed word
+    let roleIndex = 0
+    let charIndex = 0
+    let isDeleting = false
+    const typeSpeed = 80    // ms per character while typing
+    const delSpeed = 45    // ms per character while deleting
+    const pauseMs = 1800  // ms to hold the completed word
 
-  function tick () {
-    const current = roles[roleIndex]
+    function tick() {
+      const current = roles[roleIndex]
 
-    if (!isDeleting) {
-      charIndex++
-      el.textContent = current.slice(0, charIndex)
+      if (!isDeleting) {
+        charIndex++
+        el.textContent = current.slice(0, charIndex)
 
-      if (charIndex === current.length) {
-        isDeleting = true
-        return setTimeout(tick, pauseMs)
+        if (charIndex === current.length) {
+          isDeleting = true
+          return setTimeout(tick, pauseMs)
+        }
+        setTimeout(tick, typeSpeed)
+      } else {
+        charIndex--
+        el.textContent = current.slice(0, charIndex)
+
+        if (charIndex === 0) {
+          isDeleting = false
+          roleIndex = (roleIndex + 1) % roles.length
+          return setTimeout(tick, 400)
+        }
+        setTimeout(tick, delSpeed)
       }
-      setTimeout(tick, typeSpeed)
-    } else {
-      charIndex--
-      el.textContent = current.slice(0, charIndex)
-
-      if (charIndex === 0) {
-        isDeleting = false
-        roleIndex  = (roleIndex + 1) % roles.length
-        return setTimeout(tick, 400)
-      }
-      setTimeout(tick, delSpeed)
     }
-  }
 
-  setTimeout(tick, 800)
-})()
+    setTimeout(tick, 800)
+  })()
+
+  // ── Project Read More / Show Less Toggle ──────────────────────────
+  document.querySelectorAll('.btn-read-more').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.project-card-full')
+      if (!card) return
+      const collapseWrapper = card.querySelector('.project-details-collapse')
+      if (!collapseWrapper) return
+
+      const isExpanded = collapseWrapper.classList.toggle('is-expanded')
+      btn.classList.toggle('is-active', isExpanded)
+      btn.setAttribute('aria-expanded', isExpanded)
+
+      const textSpan = btn.querySelector('.btn-text')
+      if (textSpan) {
+        textSpan.textContent = isExpanded ? 'Show Less' : 'Read More'
+      }
+
+      // Refresh ScrollTrigger and Lenis smooth scrolling bounds
+      setTimeout(() => {
+        ScrollTrigger.refresh()
+        if (typeof lenis !== 'undefined' && lenis) {
+          lenis.resize()
+        }
+      }, 150)
+
+      // When collapsing, scroll back to project card top if it has scrolled out of view
+      if (!isExpanded) {
+        const cardRect = card.getBoundingClientRect()
+        if (cardRect.top < 80) {
+          if (typeof lenis !== 'undefined' && lenis) {
+            lenis.scrollTo(card, { offset: -90, duration: 0.8 })
+          } else {
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }
+      }
+    })
+  })

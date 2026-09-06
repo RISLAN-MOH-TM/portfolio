@@ -125,13 +125,12 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="container">
       <div class="section-header gs-reveal-up">
-        <span class="section-subtitle">01 // Background</span>
         <h2 class="section-title">Overview</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-image gs-reveal-up">
-          <img src="assets/ai_tech_abstract.png" alt="AI and Data Science Concept">
+          <img src="assets/ri.png" alt="AI and Data Science Concept">
         </div>
         <div class="about-content gs-reveal-up" data-delay="0.2">
           <p>Results-driven Associate Software Engineer with a strong foundation in full-stack development, database
@@ -153,7 +152,6 @@
     <!-- SKILLS SECTION -->
     <section id="skills" class="container">
       <div class="section-header gs-reveal-up">
-        <span class="section-subtitle">02 // Technical Edge</span>
         <h2 class="section-title">Skills & Expertise</h2>
       </div>
 
@@ -226,7 +224,6 @@
     <!-- EXPERIENCE SECTION -->
     <section id="experience" class="container">
       <div class="section-header gs-reveal-up">
-        <span class="section-subtitle">03 // Career</span>
         <h2 class="section-title">Dynamic Experience</h2>
       </div>
 
@@ -285,7 +282,6 @@
     <!-- EDUCATION & AI PROJECT -->
     <section id="education" class="container">
       <div class="section-header gs-reveal-up">
-        <span class="section-subtitle">04 // Academics</span>
         <h2 class="section-title">Education & Key Project</h2>
       </div>
 
@@ -329,7 +325,6 @@
     <!-- CERTIFICATIONS -->
     <section id="certifications" class="container">
       <div class="section-header gs-reveal-up">
-        <span class="section-subtitle">05 // Credentials</span>
         <h2 class="section-title">Certifications</h2>
       </div>
 
@@ -351,6 +346,13 @@
           <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">ADBI E-Learning</h3>
           <p style="color: var(--text-secondary);">Cybersecurity – comprehensive principles & data security tools</p>
         </div>
+        <div class="skill-card gs-reveal-up" data-delay="0.2">
+          <i class="fa-solid fa-cloud skill-icon"></i>
+          <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Google Cloud</h3>
+          <p style="color: var(--text-secondary);">Google Cloud Computing – Google Cloud
+            Computing Foundations</p>
+        </div>
+
         <div class="skill-card gs-reveal-up" data-delay="0.3">
           <i class="fa-solid fa-graduation-cap skill-icon"></i>
           <h3 class="skill-title" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Simplilearn</h3>
@@ -363,7 +365,6 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="container">
       <div class="section-header gs-reveal-up">
-        <span class="section-subtitle">06 // Portfolio</span>
         <h2 class="section-title">Selected Projects</h2>
       </div>
 
@@ -381,25 +382,36 @@
             <span class="skill-tag">CVE RAG</span>
           </div>
 
-          <div class="project-details-grid">
-            <div>
-              <h4 class="project-subtitle">Features</h4>
-              <ul class="project-features-list">
-                <li>Automated vulnerability scanning</li>
-                <li>CVE enrichment engine</li>
-                <li>Severity prediction</li>
-                <li>Remediation recommendations</li>
-                <li>AI-assisted reporting</li>
-              </ul>
+          <div class="project-details-collapse">
+            <div class="project-details-grid">
+              <div>
+                <h4 class="project-subtitle">Features</h4>
+                <ul class="project-features-list">
+                  <li>Automated vulnerability scanning</li>
+                  <li>CVE enrichment engine</li>
+                  <li>Severity prediction</li>
+                  <li>Remediation recommendations</li>
+                  <li>AI-assisted reporting</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="project-subtitle">Impact</h4>
+                <p class="project-impact-box">Improved vulnerability analysis efficiency through automated CVE
+                  enrichment
+                  and AI-driven severity prediction.</p>
+              </div>
             </div>
-            <div>
-              <h4 class="project-subtitle">Impact</h4>
-              <p class="project-impact-box">Improved vulnerability analysis efficiency through automated CVE enrichment
-                and AI-driven severity prediction.</p>
-            </div>
+            <div class="project-collapse-fade"></div>
           </div>
 
-          <div class="project-actions" style="margin-top: 2rem;">
+          <div class="project-readmore-wrapper">
+            <button class="btn-read-more magnetic" type="button" aria-expanded="false" data-cursor="hover">
+              <span class="btn-text">Read More</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-actions" style="margin-top: 1.5rem;">
             <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Case
               Study</a>
             <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-brands fa-github"></i>
@@ -422,44 +434,54 @@
             <span class="skill-tag">IoT</span>
           </div>
 
-          <div class="project-details-grid">
-            <div>
-              <h4 class="project-subtitle">Features</h4>
-              <ul class="project-features-list">
-                <li>Real-time traffic density monitoring using IR sensors</li>
-                <li>Emergency vehicle detection using RFID technology</li>
-                <li>Automatic traffic signal control based on traffic conditions</li>
-                <li>Ambulance priority signal management</li>
-                <li>Vehicle counting and traffic analytics</li>
-                <li>Automatic street light control using LDR sensor</li>
-                <li>Live web dashboard monitoring</li>
-                <li>Emergency alert notifications</li>
-                <li>Manual traffic signal control through dashboard</li>
-                <li>Peak traffic hour analysis and reporting</li>
-                <li>Real-time traffic light status visualization</li>
-                <li>Two-node ESP32 distributed architecture</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="project-subtitle">Impact</h4>
-              <p class="project-impact-box">Reduces traffic congestion at intersections. Improves ambulance response
-                time. Reduces energy consumption through smart street lighting. Demonstrates practical Smart City and
-                IoT implementation.</p>
+          <div class="project-details-collapse">
+            <div class="project-details-grid">
+              <div>
+                <h4 class="project-subtitle">Features</h4>
+                <ul class="project-features-list">
+                  <li>Real-time traffic density monitoring using IR sensors</li>
+                  <li>Emergency vehicle detection using RFID technology</li>
+                  <li>Automatic traffic signal control based on traffic conditions</li>
+                  <li>Ambulance priority signal management</li>
+                  <li>Vehicle counting and traffic analytics</li>
+                  <li>Automatic street light control using LDR sensor</li>
+                  <li>Live web dashboard monitoring</li>
+                  <li>Emergency alert notifications</li>
+                  <li>Manual traffic signal control through dashboard</li>
+                  <li>Peak traffic hour analysis and reporting</li>
+                  <li>Real-time traffic light status visualization</li>
+                  <li>Two-node ESP32 distributed architecture</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="project-subtitle">Impact</h4>
+                <p class="project-impact-box">Reduces traffic congestion at intersections. Improves ambulance response
+                  time. Reduces energy consumption through smart street lighting. Demonstrates practical Smart City and
+                  IoT implementation.</p>
 
-              <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
-              <div class="project-status-grid">
-                <span class="status-item checked">Hardware Prototype Completed</span>
-                <span class="status-item checked">Website Dashboard Developed</span>
-                <span class="status-item checked">Emergency Vehicle Priority Implemented</span>
-                <span class="status-item checked">Traffic Density Detection Implemented</span>
-                <span class="status-item checked">Smart Street Lighting Implemented</span>
-                <span class="status-item checked">Vehicle Analytics Implemented</span>
-                <span class="status-item checked">Ready for Demonstration</span>
+                <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
+                <div class="project-status-grid">
+                  <span class="status-item checked">Hardware Prototype Completed</span>
+                  <span class="status-item checked">Website Dashboard Developed</span>
+                  <span class="status-item checked">Emergency Vehicle Priority Implemented</span>
+                  <span class="status-item checked">Traffic Density Detection Implemented</span>
+                  <span class="status-item checked">Smart Street Lighting Implemented</span>
+                  <span class="status-item checked">Vehicle Analytics Implemented</span>
+                  <span class="status-item checked">Ready for Demonstration</span>
+                </div>
               </div>
             </div>
+            <div class="project-collapse-fade"></div>
           </div>
 
-          <div class="project-actions" style="margin-top: 2rem; flex-wrap: wrap;">
+          <div class="project-readmore-wrapper">
+            <button class="btn-read-more magnetic" type="button" aria-expanded="false" data-cursor="hover">
+              <span class="btn-text">Read More</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-actions" style="margin-top: 1.5rem; flex-wrap: wrap;">
             <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Case
               Study</a>
             <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-code"></i> Source
@@ -488,50 +510,60 @@
             <span class="skill-tag">Agile</span>
           </div>
 
-          <div class="project-details-grid">
-            <div>
-              <h4 class="project-subtitle">Features</h4>
-              <ul class="project-features-list">
-                <li>Mobile dashboard with leave balance overview</li>
-                <li>Simple leave application with mobile-friendly form</li>
-                <li>Calendar-based leave date selection</li>
-                <li>Leave type selection using dropdown menus</li>
-                <li>Document attachment for medical leave requests</li>
-                <li>Real-time leave request submission</li>
-                <li>Leave approval and rejection workflow</li>
-                <li>Supervisor comments and decision tracking</li>
-                <li>Leave history and status tracking</li>
-                <li>Push notifications and alerts</li>
-                <li>Role-based access (Employee / Supervisor / Admin)</li>
-                <li>Secure login with PIN and biometric concept</li>
-                <li>Color-coded leave status indicators</li>
-                <li>Search and filtering functionality</li>
-                <li>Confirmation messages and error handling</li>
-                <li>Mobile-responsive interface design</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="project-subtitle">Impact</h4>
-              <p class="project-impact-box">Reduces delays in leave approval processes. Improves accessibility for
-                government employees. Enhances communication between employees and supervisors. Encourages digital
-                transformation within public sector services. Reduces dependency on paper-based workflows.</p>
+          <div class="project-details-collapse">
+            <div class="project-details-grid">
+              <div>
+                <h4 class="project-subtitle">Features</h4>
+                <ul class="project-features-list">
+                  <li>Mobile dashboard with leave balance overview</li>
+                  <li>Simple leave application with mobile-friendly form</li>
+                  <li>Calendar-based leave date selection</li>
+                  <li>Leave type selection using dropdown menus</li>
+                  <li>Document attachment for medical leave requests</li>
+                  <li>Real-time leave request submission</li>
+                  <li>Leave approval and rejection workflow</li>
+                  <li>Supervisor comments and decision tracking</li>
+                  <li>Leave history and status tracking</li>
+                  <li>Push notifications and alerts</li>
+                  <li>Role-based access (Employee / Supervisor / Admin)</li>
+                  <li>Secure login with PIN and biometric concept</li>
+                  <li>Color-coded leave status indicators</li>
+                  <li>Search and filtering functionality</li>
+                  <li>Confirmation messages and error handling</li>
+                  <li>Mobile-responsive interface design</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="project-subtitle">Impact</h4>
+                <p class="project-impact-box">Reduces delays in leave approval processes. Improves accessibility for
+                  government employees. Enhances communication between employees and supervisors. Encourages digital
+                  transformation within public sector services. Reduces dependency on paper-based workflows.</p>
 
-              <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
-              <div class="project-status-grid">
-                <span class="status-item checked">User Research Completed</span>
-                <span class="status-item checked">Persona & Behaviour Analysis Completed</span>
-                <span class="status-item checked">Empathy Map Developed</span>
-                <span class="status-item checked">Wireframes Designed</span>
-                <span class="status-item checked">Interactive Prototype Developed</span>
-                <span class="status-item checked">Usability Testing Completed</span>
-                <span class="status-item checked">Multiple Iterations Implemented</span>
-                <span class="status-item checked">Final UI Evaluation Completed</span>
-                <span class="status-item checked">Ready for Demonstration</span>
+                <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
+                <div class="project-status-grid">
+                  <span class="status-item checked">User Research Completed</span>
+                  <span class="status-item checked">Persona & Behaviour Analysis Completed</span>
+                  <span class="status-item checked">Empathy Map Developed</span>
+                  <span class="status-item checked">Wireframes Designed</span>
+                  <span class="status-item checked">Interactive Prototype Developed</span>
+                  <span class="status-item checked">Usability Testing Completed</span>
+                  <span class="status-item checked">Multiple Iterations Implemented</span>
+                  <span class="status-item checked">Final UI Evaluation Completed</span>
+                  <span class="status-item checked">Ready for Demonstration</span>
+                </div>
               </div>
             </div>
+            <div class="project-collapse-fade"></div>
           </div>
 
-          <div class="project-actions" style="margin-top: 2rem; flex-wrap: wrap;">
+          <div class="project-readmore-wrapper">
+            <button class="btn-read-more magnetic" type="button" aria-expanded="false" data-cursor="hover">
+              <span class="btn-text">Read More</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-actions" style="margin-top: 1.5rem; flex-wrap: wrap;">
             <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Case
               Study</a>
             <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-pen-ruler"></i> UI
@@ -565,55 +597,65 @@
             <span class="skill-tag">DSA</span>
           </div>
 
-          <div class="project-details-grid">
-            <div>
-              <h4 class="project-subtitle">Features</h4>
-              <ul class="project-features-list">
-                <li>Large-scale CSV dataset processing (50MB+)</li>
-                <li>Memory-efficient chunk-based data ingestion</li>
-                <li>Direct local path dataset loading</li>
-                <li>Multi-source dataset integration and validation</li>
-                <li>Automatic duplicate detection and removal</li>
-                <li>Dead Letter Queue (DLQ) management for faulty records</li>
-                <li>Revenue analytics and business performance monitoring</li>
-                <li>Customer segmentation and behavioural analysis</li>
-                <li>Seasonal demand forecasting and trend analysis</li>
-                <li>Delivery performance and logistics efficiency analysis</li>
-                <li>Regional sales and operational performance dashboards</li>
-                <li>Statistical anomaly detection for business insights</li>
-                <li>Interactive visual dashboards and charts</li>
-                <li>PDF and CSV report generation</li>
-                <li>REST API integration between backend and frontend</li>
-                <li>Real-time analytics visualization</li>
-                <li>Role-based modular architecture</li>
-                <li>Automated testing and validation framework</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="project-subtitle">Impact</h4>
-              <p class="project-impact-box">Enables efficient processing of large e-commerce datasets. Reduces manual
-                data cleaning effort. Improves business decision-making through analytics. Identifies operational
-                bottlenecks. Supports enterprise-level software engineering practices with SOLID design patterns.</p>
+          <div class="project-details-collapse">
+            <div class="project-details-grid">
+              <div>
+                <h4 class="project-subtitle">Features</h4>
+                <ul class="project-features-list">
+                  <li>Large-scale CSV dataset processing (50MB+)</li>
+                  <li>Memory-efficient chunk-based data ingestion</li>
+                  <li>Direct local path dataset loading</li>
+                  <li>Multi-source dataset integration and validation</li>
+                  <li>Automatic duplicate detection and removal</li>
+                  <li>Dead Letter Queue (DLQ) management for faulty records</li>
+                  <li>Revenue analytics and business performance monitoring</li>
+                  <li>Customer segmentation and behavioural analysis</li>
+                  <li>Seasonal demand forecasting and trend analysis</li>
+                  <li>Delivery performance and logistics efficiency analysis</li>
+                  <li>Regional sales and operational performance dashboards</li>
+                  <li>Statistical anomaly detection for business insights</li>
+                  <li>Interactive visual dashboards and charts</li>
+                  <li>PDF and CSV report generation</li>
+                  <li>REST API integration between backend and frontend</li>
+                  <li>Real-time analytics visualization</li>
+                  <li>Role-based modular architecture</li>
+                  <li>Automated testing and validation framework</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="project-subtitle">Impact</h4>
+                <p class="project-impact-box">Enables efficient processing of large e-commerce datasets. Reduces manual
+                  data cleaning effort. Improves business decision-making through analytics. Identifies operational
+                  bottlenecks. Supports enterprise-level software engineering practices with SOLID design patterns.</p>
 
-              <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
-              <div class="project-status-grid">
-                <span class="status-item checked">Requirements Analysis Completed</span>
-                <span class="status-item checked">System Architecture Designed</span>
-                <span class="status-item checked">UML Modelling Completed</span>
-                <span class="status-item checked">OOP Design Implemented</span>
-                <span class="status-item checked">SOLID Principles Applied</span>
-                <span class="status-item checked">Design Patterns Integrated</span>
-                <span class="status-item checked">Large Dataset Processing Module Developed</span>
-                <span class="status-item checked">Interactive Dashboard Developed</span>
-                <span class="status-item checked">Automated Testing Implemented</span>
-                <span class="status-item checked">Performance Optimization Completed</span>
-                <span class="status-item checked">Documentation Completed</span>
-                <span class="status-item checked">Ready for Submission</span>
+                <h4 class="project-subtitle" style="margin-top: 1.5rem;">Status</h4>
+                <div class="project-status-grid">
+                  <span class="status-item checked">Requirements Analysis Completed</span>
+                  <span class="status-item checked">System Architecture Designed</span>
+                  <span class="status-item checked">UML Modelling Completed</span>
+                  <span class="status-item checked">OOP Design Implemented</span>
+                  <span class="status-item checked">SOLID Principles Applied</span>
+                  <span class="status-item checked">Design Patterns Integrated</span>
+                  <span class="status-item checked">Large Dataset Processing Module Developed</span>
+                  <span class="status-item checked">Interactive Dashboard Developed</span>
+                  <span class="status-item checked">Automated Testing Implemented</span>
+                  <span class="status-item checked">Performance Optimization Completed</span>
+                  <span class="status-item checked">Documentation Completed</span>
+                  <span class="status-item checked">Ready for Submission</span>
+                </div>
               </div>
             </div>
+            <div class="project-collapse-fade"></div>
           </div>
 
-          <div class="project-actions" style="margin-top: 2rem; flex-wrap: wrap;">
+          <div class="project-readmore-wrapper">
+            <button class="btn-read-more magnetic" type="button" aria-expanded="false" data-cursor="hover">
+              <span class="btn-text">Read More</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="project-actions" style="margin-top: 1.5rem; flex-wrap: wrap;">
             <a href="#" class="btn-primary magnetic" data-cursor="hover"><i class="fa-solid fa-file-lines"></i> Design
               Document</a>
             <a href="#" class="btn-secondary magnetic" data-cursor="hover"><i class="fa-solid fa-diagram-project"></i>
@@ -649,7 +691,7 @@
           <span class="section-subtitle">07 // Connect</span>
           <h2 class="section-title" style="margin-bottom: 0;">Let's build something</h2>
           <a href="mailto:rislanmohammed151@gmail.com" class="contact-email magnetic"
-            data-cursor="hover">rislanmohammed@</a>
+            data-cursor="hover">contact@rislan</a>
           <div class="contact-socials">
             <a href="https://linkedin.com/in/rislan-mohamed" target="_blank" data-cursor="hover"><i
                 class="fa-brands fa-linkedin-in"></i></a>
