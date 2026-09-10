@@ -328,6 +328,11 @@ html.lenis body {
   display: none;
 }
 
+/* Hidden by default; shown only inside mobile nav overlay via @media rule */
+.mobile-social-links {
+  display: none;
+}
+
 .social-links-bar a {
   color: var(--text-secondary);
   font-size: 1.2rem;
@@ -1154,9 +1159,28 @@ footer {
     display: flex;
   }
 
-  /* --- SOCIAL BAR: hide on mobile — replaced by contact links in nav overlay --- */
+  /* --- SOCIAL BAR: hidden on mobile — links moved to nav overlay --- */
   .social-bar {
     display: none;
+  }
+
+  /* Social links row inside the mobile nav overlay */
+  .mobile-social-links {
+    display: flex;
+    gap: 1.75rem;
+    margin-top: 2rem;
+  }
+
+  .mobile-social-links a {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .mobile-social-links a:hover {
+    color: var(--accent-glow);
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px var(--accent-color));
   }
 
   /* --- GLOBAL SPACING --- */
